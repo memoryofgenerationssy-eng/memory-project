@@ -1,10 +1,11 @@
-/* Общие настройки */
+/* ================== Общие настройки ================== */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background: url('images/bg.jpg') center/cover no-repeat; /* <- сюда твоя картинка фона */
+    background: url('images/bg.jpg') center/cover no-repeat; /* фон сайта */
+    background-attachment: fixed; /* фон остаётся на месте при скролле */
     position: relative;
 }
 
@@ -14,23 +15,23 @@ body::before {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(255,255,255,0.6); /* можно менять прозрачность */
+    background: rgba(255,255,255,0.6); /* прозрачный светлый слой */
     z-index: -1;
 }
 
-/* Ссылки */
+/* ================== Ссылки ================== */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* Header */
+/* ================== Header ================== */
 header {
-    background: rgba(200,0,0,0.8);
+    background: rgba(44,62,80,0.9); /* тёмно-серый */
     color: white;
     padding: 60px 20px;
     text-align: center;
-    border-bottom: 3px solid #c0392b;
+    border-bottom: 3px solid #e74c3c; /* красный акцент */
 }
 header h1 {
     font-size: 3em;
@@ -48,7 +49,7 @@ header p {
     margin-bottom: 20px;
 }
 
-/* Навигация */
+/* ================== Навигация ================== */
 nav {
     display: flex;
     justify-content: center;
@@ -65,11 +66,11 @@ nav a {
     transition: all 0.3s ease;
 }
 nav a:hover {
-    background: #e74c3c;
+    background: #e74c3c; /* красный акцент */
     transform: scale(1.05);
 }
 
-/* Секции */
+/* ================== Секции ================== */
 section {
     padding: 60px 20px;
     max-width: 1000px;
@@ -79,37 +80,42 @@ section {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* Карточки */
+/* ================== Карточки ================== */
 .card, .team-card, .story-card {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white;
+    background: #ffffff; /* светлый фон */
+    color: #333;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s, border-left 0.2s;
 }
 .card:hover, .team-card:hover, .story-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-left: 5px solid #e74c3c; /* красный акцент при наведении */
 }
 
-/* Кнопки */
+/* ================== Кнопки ================== */
 .buttons a {
     display: inline-block;
     margin: 10px;
     padding: 14px 28px;
-    background: linear-gradient(45deg, #e74c3c, #c0392b);
-    color: white;
+    background: #ffffff;
+    color: #e74c3c; /* красный акцент */
+    border: 2px solid #e74c3c;
     border-radius: 50px;
     font-weight: bold;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
 }
 .buttons a:hover {
+    background: #e74c3c;
+    color: #ffffff;
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* Команда */
+/* ================== Команда ================== */
 .team-container {
     display: flex;
     flex-wrap: wrap;
@@ -127,7 +133,7 @@ section {
     border-radius: 15px;
 }
 
-/* Видео галерея */
+/* ================== Видео галерея ================== */
 .video-thumb {
     display: inline-block;
     margin: 10px;
@@ -140,7 +146,7 @@ section {
     transform: scale(1.05);
 }
 
-/* Footer */
+/* ================== Footer ================== */
 footer {
     background: #2c3e50;
     color: white;
@@ -153,7 +159,7 @@ footer a {
     font-weight: bold;
 }
 
-/* Адаптивность */
+/* ================== Адаптивность ================== */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2em;
