@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f0f2f5, #d6e0f0); /* красивый градиент */
+    background: linear-gradient(135deg, #f4ebe1, #f1d6c1); /* мягкий градиент для всех страниц */
     color: #333;
 }
 
@@ -17,20 +17,22 @@ header {
     color: white;
     padding: 80px 20px;
     text-align: center;
+    background-blend-mode: overlay;
 }
 
 /* Логотип в header */
 header .logo {
-    width: 120px;            
+    width: 120px;
     height: auto;
     display: block;
-    margin: 0 auto 20px auto; 
-    border-radius: 20px;      
-    box-shadow: 0 5px 20px rgba(0,0,0,0.4); 
+    margin: 0 auto 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
     transition: transform 0.3s;
 }
+
 header .logo:hover {
-    transform: scale(1.05);  
+    transform: scale(1.05);
 }
 
 header h1 {
@@ -71,7 +73,8 @@ section {
     padding: 60px 20px;
     max-width: 1000px;
     margin: 40px auto;
-    background: white;
+    background: rgba(255, 255, 255, 0.85); /* полупрозрачный фон */
+    backdrop-filter: blur(5px);
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
@@ -124,10 +127,11 @@ section {
 
 /* Footer */
 footer {
-    background: #2c3e50;
+    background: rgba(44, 62, 80, 0.95);
     color: white;
     text-align: center;
     padding: 40px 20px;
+    backdrop-filter: blur(5px);
 }
 
 footer a {
@@ -145,7 +149,7 @@ footer a {
 }
 
 .team-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 15px;
     padding: 20px;
     text-align: center;
