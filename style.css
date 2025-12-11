@@ -54,6 +54,7 @@ nav a:hover {
 
 /* Логотип */
 .logo {
+    width: 100%
     max-width: 200px;      /* ограничение ширины */
     height: auto;          /* сохраняем пропорции */
     display: block;
@@ -178,3 +179,4 @@ footer a {
         max-width: 150px;
     }
 }
+
