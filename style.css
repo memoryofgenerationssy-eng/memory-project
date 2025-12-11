@@ -52,6 +52,15 @@ nav a:hover {
     background: #e74c3c;
 }
 
+/* Логотип */
+.logo {
+    max-width: 200px;      /* ограничение ширины */
+    height: auto;          /* сохраняем пропорции */
+    display: block;
+    margin: 0 auto 20px;   /* центрирование и отступ снизу */
+    border-radius: 10px;   /* скругление углов, по желанию */
+}
+
 /* Секции */
 section {
     padding: 60px 20px;
@@ -164,5 +173,8 @@ footer a {
     }
     .video-container iframe {
         height: 300px;
+    }
+    .logo {
+        max-width: 150px;
     }
 }
