@@ -175,3 +175,39 @@ footer a {
     font-weight: bold;
     margin: 10px 0;
 }
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* вертикально меню */
+        gap: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em; /* меньше заголовок */
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .card, .buttons a, section {
+        width: 90%; /* карточки и секции под ширину экрана */
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .buttons a {
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr; /* команда в один столбец */
+        gap: 20px;
+    }
+
+    header, section, footer {
+        padding: 40px 15px; /* меньше отступы */
+    }
+}
