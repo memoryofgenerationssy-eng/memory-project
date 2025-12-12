@@ -2,41 +2,56 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты — Память Поколений</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/animations.css">
 </head>
 <body>
 
 <header>
-    <h1>Контакты</h1>
+    <div class="logo">Память Поколений</div>
     <nav>
-    <a href="index.html">Главная</a>
-    <a href="about.html">О проекте</a>
-    <a href="volunteers.html">Волонтёрам</a>
-    <a href="videos.html">Видео</a>
-    <a href="team.html">Команда</a>
-    <a href="contacts.html">Контакты</a>
-</nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О проекте</a>
+        <a href="stories.html">Истории</a>
+        <a href="videos.html">Видео</a>
+        <a href="volunteers.html">Волонтёрам</a>
+        <a href="contacts.html" class="active">Контакты</a>
+    </nav>
 </header>
 
-<section>
-    <h2>Связаться с нами</h2>
-    <div class="card">
-        <p>Email: memory_of_generations@mail.ru</p>
-        <p>Telegram: <a href="#">@memory_of_generations</a></p>
-    </div>
+<section class="intro fade-up">
+    <h1>Контакты</h1>
+    <p>Свяжитесь с нами, если у вас есть вопросы или предложения.</p>
+</section>
+
+<section class="content fade-up">
+    <p class="fade-left">Email: pamyat.pokoleniy@example.com</p>
+    <p class="fade-left">Телефон: +7 999 123-45-67</p>
+    <p class="fade-left">Соцсети:</p>
+    <ul class="fade-left">
+        <li><a href="#" class="link">VK</a></li>
+        <li><a href="#" class="link">Telegram</a></li>
+        <li><a href="#" class="link">Instagram</a></li>
+    </ul>
 </section>
 
 <footer>
-    <p>
-    <a href="https://t.me/memory_of_generations" target="_blank">Telegram </a> | 
-    <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube </a> | 
-    <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте </a>
-</p>
+    © 2025 Память Поколений
 </footer>
 
+<script>
+const faders = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+const appearOptions = {threshold: 0.2, rootMargin: "0px 0px -50px 0px"};
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+    });
+}, appearOptions);
+faders.forEach(fader=>appearOnScroll.observe(fader));
+</script>
+
 </body>
-
 </html>
-
