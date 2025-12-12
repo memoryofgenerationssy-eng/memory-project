@@ -2,55 +2,56 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Истории — Память Поколений</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/animations.css">
 </head>
 <body>
 
 <header>
-    <img src="images/logo.png" alt="Логотип" class="logo">
-    <h1>Истории участников</h1>
-    <p>Здесь мы собираем воспоминания, интервью и истории современного поколения.</p>
+    <div class="logo">Память Поколений</div>
     <nav>
         <a href="index.html">Главная</a>
         <a href="about.html">О проекте</a>
-        <a href="volunteers.html">Волонтёрам</a>
+        <a href="stories.html" class="active">Истории</a>
         <a href="videos.html">Видео</a>
-        <a href="team.html">Команда</a>
+        <a href="volunteers.html">Волонтёрам</a>
         <a href="contacts.html">Контакты</a>
     </nav>
 </header>
 
-<section>
-    <h2>Собранные истории</h2>
+<section class="intro fade-up">
+    <h1>Истории участников</h1>
+    <p>Здесь собраны рассказы наших героев, их опыт и воспоминания.</p>
+</section>
 
-    <div class="story-card">
+<section class="content fade-up">
+    <div class="story-card fade-up">
         <h3>История №1</h3>
-        <p>Короткое описание истории, кто её рассказал, когда и где.</p>
+        <p>Мария делится своими впечатлениями и опытом участия в проекте.</p>
     </div>
-
-    <div class="story-card">
+    <div class="story-card fade-up">
         <h3>История №2</h3>
-        <p>Ещё одна история участника проекта.</p>
+        <p>Алексей рассказывает о том, как проект помог ему сохранить память о важном событии.</p>
     </div>
-
-    <div class="story-card">
-        <h3>История №3</h3>
-        <p>История третьего участника, с фото, если нужно.</p>
-    </div>
-
 </section>
 
 <footer>
-    <p>
-        <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a> | 
-        <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a> | 
-        <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a>
-    </p>
-    <p>© 2025 Память Поколений</p>
+    © 2025 Память Поколений
 </footer>
 
-<script src="script.js"></script>
+<script>
+const faders = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+const appearOptions = {threshold: 0.2, rootMargin: "0px 0px -50px 0px"};
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+    });
+}, appearOptions);
+faders.forEach(fader=>appearOnScroll.observe(fader));
+</script>
+
 </body>
 </html>
