@@ -2,59 +2,67 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная — Память Поколений</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Память Поколений</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/animations.css">
 </head>
 <body>
 
 <header>
-    <!-- Логотип проекта -->
-    <img src="images/logo.png" alt="Логотип Память Поколений" class="logo">
-
-    <h1>Ты тоже часть истории</h1>
-    <p>Сохраняем память поколений вместе — участвуй в проекте, вдохновляйся историями и создавай собственную память для будущих поколений.</p>
-    
+    <div class="logo">Память Поколений</div>
     <nav>
-    <a href="index.html">Главная</a>
-    <a href="about.html">О проекте</a>
-    <a href="volunteers.html">Волонтёрам</a>
-    <a href="videos.html">Видео</a>
-    <a href="team.html">Команда</a>
-    <a href="contacts.html">Контакты</a>
-</nav>
+        <a href="index.html" class="active">Главная</a>
+        <a href="about.html">О проекте</a>
+        <a href="stories.html">Истории</a>
+        <a href="videos.html">Видео</a>
+        <a href="volunteers.html">Волонтёрам</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
 </header>
 
-<section>
-    <h2>Чем мы занимаемся</h2>
-    <div class="card">
-        <h3>Встречи и лекции</h3>
-        <p>Обмен опытом и ценностями между поколениями через встречи и лекции.</p>
+<section class="hero fade-up">
+    <h1>Сохраняем истории молодого поколения</h1>
+    <p>Проект «Память Поколений» рассказывает истории настоящих людей</p>
+    <a href="stories.html" class="button">Читать истории</a>
+</section>
+
+<section class="intro fade-up">
+    <h2>О проекте</h2>
+    <p>Мы собираем, сохраняем и публикуем истории молодых людей, чтобы будущие поколения могли учиться на опыте настоящих героев.</p>
+</section>
+
+<section class="content fade-up">
+    <h2>Наши направления</h2>
+    <div class="story-card fade-up">
+        <h3>Истории</h3>
+        <p>Рассказы реальных людей, их опыт, воспоминания и достижения.</p>
     </div>
-    <div class="card">
-        <h3>Видео и подкасты</h3>
-        <p>Сохраняем истории современного поколения через медиа-контент.</p>
+    <div class="video-card fade-up">
+        <h3>Видео</h3>
+        <p>Интервью с участниками проекта и запись их воспоминаний.</p>
     </div>
-    <div class="card">
-        <h3>Волонтёрское движение</h3>
-        <p>Каждый может стать частью команды проекта и внести вклад в сохранение истории.</p>
-    </div>
-    <div class="buttons">
-        <a href="volunteers.html">Стань волонтёром</a>
-        <a href="videos.html">Смотреть видео</a>
-        <a href="about.html">О проекте</a>
+    <div class="volunteer-step fade-up">
+        <h3>Волонтёры</h3>
+        <p>Присоединяйтесь к нам и помогайте сохранять память.</p>
     </div>
 </section>
 
 <footer>
-    <p>
-    <a href="https://t.me/memory_of_generations" target="_blank">Telegram </a> | 
-    <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube </a> | 
-    <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте </a>
-</p>
+    © 2025 Память Поколений
 </footer>
+
+<script>
+const faders = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+const appearOptions = {threshold: 0.2, rootMargin: "0px 0px -50px 0px"};
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+    });
+}, appearOptions);
+faders.forEach(fader=>appearOnScroll.observe(fader));
+</script>
 
 </body>
 </html>
-
-
