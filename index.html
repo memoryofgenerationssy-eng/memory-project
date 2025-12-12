@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Память Поколений</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/animations.css">
 </head>
 <body>
 
@@ -20,49 +20,35 @@
     </nav>
 </header>
 
-<section class="hero fade-up">
-    <h1>Сохраняем истории молодого поколения</h1>
-    <p>Проект «Память Поколений» рассказывает истории настоящих людей</p>
-    <a href="stories.html" class="button">Читать истории</a>
-</section>
-
-<section class="intro fade-up">
-    <h2>О проекте</h2>
-    <p>Мы собираем, сохраняем и публикуем истории молодых людей, чтобы будущие поколения могли учиться на опыте настоящих героев.</p>
-</section>
-
-<section class="content fade-up">
-    <h2>Наши направления</h2>
-    <div class="story-card fade-up">
-        <h3>Истории</h3>
-        <p>Рассказы реальных людей, их опыт, воспоминания и достижения.</p>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Сохраняем истории молодого поколения</h1>
+        <p>Проект «Память Поколений» рассказывает реальные истории молодых людей.</p>
+        <a href="stories.html" class="button">Читать истории</a>
     </div>
-    <div class="video-card fade-up">
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>Истории</h3>
+        <p>Рассказы реальных людей, их опыт и достижения.</p>
+        <a href="stories.html" class="button-small">Подробнее</a>
+    </div>
+    <div class="feature-card">
         <h3>Видео</h3>
         <p>Интервью с участниками проекта и запись их воспоминаний.</p>
+        <a href="videos.html" class="button-small">Смотреть видео</a>
     </div>
-    <div class="volunteer-step fade-up">
+    <div class="feature-card">
         <h3>Волонтёры</h3>
         <p>Присоединяйтесь к нам и помогайте сохранять память.</p>
+        <a href="volunteers.html" class="button-small">Стать волонтёром</a>
     </div>
 </section>
 
 <footer>
-    © 2025 Память Поколений
+    <p>© 2025 Память Поколений</p>
 </footer>
-
-<script>
-const faders = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
-const appearOptions = {threshold: 0.2, rootMargin: "0px 0px -50px 0px"};
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        appearOnScroll.unobserve(entry.target);
-    });
-}, appearOptions);
-faders.forEach(fader=>appearOnScroll.observe(fader));
-</script>
 
 </body>
 </html>
