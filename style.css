@@ -1,12 +1,42 @@
+/* ================== Общие стили ================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0 0 15px 0;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
 /* ================== Горизонтальное меню ================== */
 header {
-    padding: 15px 20px;
     background: #f8f9fb;
+    padding: 15px 20px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 28px;
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: middle;
+}
+
+header nav {
+    display: inline-block;
 }
 
 header nav a {
@@ -14,16 +44,17 @@ header nav a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    font-size: 16px;
 }
 
 header nav a:hover {
     color: #2b66f0;
 }
 
-/* ================== Карточки ================== */
+/* ================== Карточки контента ================== */
 .card {
     background: #fff;
-    padding: 15px 20px;
+    padding: 18px 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -32,13 +63,14 @@ header nav a:hover {
 /* ================== Вертикальное меню слева ================== */
 .side-panel {
     position: fixed;
-    top: 120px;
+    top: 120px; /* можно подправить под высоту логотипа */
     left: 20px;
     width: 230px;
     background: #f3f4f7;
     padding: 18px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
 /* ================== Кнопка Скачать Положение ================== */
@@ -62,10 +94,10 @@ header nav a:hover {
     transform: translateY(-2px);
 }
 
-/* ================== Сдвиг основного контента для меню ================== */
+/* ================== Сдвиг контента для меню ================== */
 @media screen and (min-width: 1024px) {
     section {
-        margin-left: 270px; /* ширина меню + отступ */
+        margin-left: 270px; /* ширина меню + небольшой отступ */
     }
 }
 
