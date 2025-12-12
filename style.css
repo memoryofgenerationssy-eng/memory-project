@@ -1,142 +1,107 @@
-/* ================== Общие стили ================== */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-}
-
-h1, h2, h3 {
-    margin: 0 0 15px 0;
-}
-
-h1 {
-    font-size: 28px;
-}
-
-h2 {
-    font-size: 22px;
-}
-
-h3 {
-    font-size: 18px;
-}
-
-/* ================== Логотип и горизонтальное меню ================== */
+/* Стили для header и горизонтального меню */
 header {
-    background: #f8f9fb;
     padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    background: #f8f9fb;
 }
 
 header h1 {
-    font-size: 24px;
     margin: 0;
-}
-
-header nav {
-    display: flex;
-    flex-wrap: wrap;
+    font-size: 28px;
 }
 
 header nav a {
-    margin-left: 15px;
+    margin-right: 15px;
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    font-size: 16px;
-    transition: color 0.3s ease;
 }
 
 header nav a:hover {
     color: #2b66f0;
 }
 
-/* ================== Карточки контента ================== */
+/* Стили карточек */
 .card {
     background: #fff;
-    padding: 18px 20px;
+    padding: 15px 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* ================== Вертикальное меню слева ================== */
+/* ▼▼▼ Вертикальное меню слева ▼▼▼ */
 .side-panel {
     position: fixed;
-    top: 140px; /* подстраиваем под высоту хедера */
+    top: 120px;
     left: 20px;
-    width: 220px;
+    width: 230px;
     background: #f3f4f7;
-    padding: 15px;
+    padding: 18px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    z-index: 1000;
 }
 
-/* ================== Кнопка Скачать Положение ================== */
-.side-panel a.download-doc {
-    display: block;
-    text-align: center;
-    text-decoration: none;
+.side-panel h3 {
+    margin-top: 0;
+    font-size: 18px;
     font-weight: 700;
-    font-size: 16px;
-    color: #fff;
-    padding: 14px 0;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #4a90e2, #2b66f0);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.side-panel a {
+    display: block;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.side-panel a:hover {
+    background: #e6e8ee;
+}
+
+/* Кнопка скачать Положение */
+.side-panel a.download-doc {
+    background: #2b66f0;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
 .side-panel a.download-doc:hover {
-    background: linear-gradient(90deg, #5aa0f2, #3a78e0);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-    transform: translateY(-2px);
+    background: #1f52c2;
 }
 
-/* ================== Сдвиг контента для меню ================== */
+/* ▼▼▼ Сдвиг основного контента для бокового меню ▼▼▼ */
 @media screen and (min-width: 1024px) {
     section {
-        margin-left: 260px;
-        padding: 20px;
+        margin-left: 270px; /* ширина меню + небольшой отступ */
     }
 }
 
-/* ================== Адаптация для планшетов и мобильных ================== */
+/* Адаптация для планшетов и мобильных */
 @media screen and (max-width: 1023px) {
     .side-panel {
-        position: relative;
+        position: relative; /* перестаёт быть фиксированным */
         width: 100%;
         margin-bottom: 20px;
         box-shadow: none;
     }
 
     section {
-        margin-left: 0;
-        padding: 15px;
-    }
-
-    header {
-        justify-content: center;
-        text-align: center;
-    }
-
-    header nav {
-        margin-top: 10px;
-        justify-content: center;
-    }
-
-    header nav a {
-        margin: 5px;
+        margin-left: 0; /* контент занимает всю ширину */
     }
 }
 
-/* ================== Футер ================== */
+/* Стили футера */
 footer {
     padding: 20px;
     text-align: center;
