@@ -30,11 +30,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 header h1 {
     font-size: 24px;
     margin: 0;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 header nav a {
@@ -62,11 +68,11 @@ header nav a:hover {
 /* ================== Вертикальное меню слева ================== */
 .side-panel {
     position: fixed;
-    top: 120px; /* регулируется под высоту хедера */
+    top: 140px; /* подстраиваем под высоту хедера */
     left: 20px;
-    width: 230px;
+    width: 220px;
     background: #f3f4f7;
-    padding: 18px;
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     z-index: 1000;
@@ -93,10 +99,10 @@ header nav a:hover {
     transform: translateY(-2px);
 }
 
-/* ================== Сдвиг основного контента для меню ================== */
+/* ================== Сдвиг контента для меню ================== */
 @media screen and (min-width: 1024px) {
     section {
-        margin-left: 270px;
+        margin-left: 260px;
         padding: 20px;
     }
 }
@@ -113,6 +119,20 @@ header nav a:hover {
     section {
         margin-left: 0;
         padding: 15px;
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    header nav a {
+        margin: 5px;
     }
 }
 
