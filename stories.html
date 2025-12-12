@@ -2,12 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Истории — Память Поколений</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/animations.css">
 </head>
 <body>
-
 <header>
     <div class="logo">Память Поколений</div>
     <nav>
@@ -15,43 +14,29 @@
         <a href="about.html">О проекте</a>
         <a href="stories.html" class="active">Истории</a>
         <a href="videos.html">Видео</a>
-        <a href="volunteers.html">Волонтёрам</a>
+        <a href="volunteers.html">Волонтёры</a>
         <a href="contacts.html">Контакты</a>
     </nav>
 </header>
 
-<section class="intro fade-up">
+<section class="content">
     <h1>Истории участников</h1>
-    <p>Здесь собраны рассказы наших героев, их опыт и воспоминания.</p>
-</section>
 
-<section class="content fade-up">
-    <div class="story-card fade-up">
+    <div class="story-card">
         <h3>История №1</h3>
-        <p>Мария делится своими впечатлениями и опытом участия в проекте.</p>
+        <p>Описание первой истории: как человек преодолел трудности и достиг своих целей.</p>
+        <a href="#" class="button-small">Читать полностью</a>
     </div>
-    <div class="story-card fade-up">
+
+    <div class="story-card">
         <h3>История №2</h3>
-        <p>Алексей рассказывает о том, как проект помог ему сохранить память о важном событии.</p>
+        <p>Описание второй истории: вдохновляющий опыт и советы для других участников.</p>
+        <a href="#" class="button-small">Читать полностью</a>
     </div>
 </section>
 
 <footer>
-    © 2025 Память Поколений
+    <p>© 2025 Память Поколений</p>
 </footer>
-
-<script>
-const faders = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
-const appearOptions = {threshold: 0.2, rootMargin: "0px 0px -50px 0px"};
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        appearOnScroll.unobserve(entry.target);
-    });
-}, appearOptions);
-faders.forEach(fader=>appearOnScroll.observe(fader));
-</script>
-
 </body>
 </html>
