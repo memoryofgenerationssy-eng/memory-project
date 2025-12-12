@@ -23,28 +23,27 @@ h3 {
     font-size: 18px;
 }
 
-/* ================== Горизонтальное меню ================== */
+/* ================== Логотип и горизонтальное меню ================== */
 header {
     background: #f8f9fb;
     padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header h1 {
-    display: inline-block;
-    margin-right: 30px;
-    vertical-align: middle;
-}
-
-header nav {
-    display: inline-block;
+    font-size: 24px;
+    margin: 0;
 }
 
 header nav a {
-    margin-right: 15px;
+    margin-left: 15px;
     text-decoration: none;
     color: #333;
     font-weight: 500;
     font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 header nav a:hover {
@@ -63,7 +62,7 @@ header nav a:hover {
 /* ================== Вертикальное меню слева ================== */
 .side-panel {
     position: fixed;
-    top: 120px; /* можно подправить под высоту логотипа */
+    top: 120px; /* регулируется под высоту хедера */
     left: 20px;
     width: 230px;
     background: #f3f4f7;
@@ -94,10 +93,11 @@ header nav a:hover {
     transform: translateY(-2px);
 }
 
-/* ================== Сдвиг контента для меню ================== */
+/* ================== Сдвиг основного контента для меню ================== */
 @media screen and (min-width: 1024px) {
     section {
-        margin-left: 270px; /* ширина меню + небольшой отступ */
+        margin-left: 270px;
+        padding: 20px;
     }
 }
 
@@ -112,6 +112,7 @@ header nav a:hover {
 
     section {
         margin-left: 0;
+        padding: 15px;
     }
 }
 
