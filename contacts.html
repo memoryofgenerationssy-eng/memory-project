@@ -2,12 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты — Память Поколений</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/animations.css">
 </head>
 <body>
-
 <header>
     <div class="logo">Память Поколений</div>
     <nav>
@@ -15,43 +14,20 @@
         <a href="about.html">О проекте</a>
         <a href="stories.html">Истории</a>
         <a href="videos.html">Видео</a>
-        <a href="volunteers.html">Волонтёрам</a>
+        <a href="volunteers.html">Волонтёры</a>
         <a href="contacts.html" class="active">Контакты</a>
     </nav>
 </header>
 
-<section class="intro fade-up">
+<section class="content">
     <h1>Контакты</h1>
-    <p>Свяжитесь с нами, если у вас есть вопросы или предложения.</p>
-</section>
-
-<section class="content fade-up">
-    <p class="fade-left">Email: pamyat.pokoleniy@example.com</p>
-    <p class="fade-left">Телефон: +7 999 123-45-67</p>
-    <p class="fade-left">Соцсети:</p>
-    <ul class="fade-left">
-        <li><a href="#" class="link">VK</a></li>
-        <li><a href="#" class="link">Telegram</a></li>
-        <li><a href="#" class="link">Instagram</a></li>
-    </ul>
+    <p>📧 Email: info@pamyat-pokoleniy.ru</p>
+    <p>📞 Телефон: +7 919 690-72-78</p>
+    <p>🏠 Адрес: г. Казань, Россия</p>
 </section>
 
 <footer>
-    © 2025 Память Поколений
+    <p>© 2025 Память Поколений</p>
 </footer>
-
-<script>
-const faders = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
-const appearOptions = {threshold: 0.2, rootMargin: "0px 0px -50px 0px"};
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        appearOnScroll.unobserve(entry.target);
-    });
-}, appearOptions);
-faders.forEach(fader=>appearOnScroll.observe(fader));
-</script>
-
 </body>
 </html>
