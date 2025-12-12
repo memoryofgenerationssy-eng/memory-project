@@ -1,4 +1,4 @@
-/* Стили для header и горизонтального меню */
+/* ================== Горизонтальное меню ================== */
 header {
     padding: 15px 20px;
     background: #f8f9fb;
@@ -20,7 +20,7 @@ header nav a:hover {
     color: #2b66f0;
 }
 
-/* Стили карточек */
+/* ================== Карточки ================== */
 .card {
     background: #fff;
     padding: 15px 20px;
@@ -29,7 +29,7 @@ header nav a:hover {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* ▼▼▼ Вертикальное меню слева ▼▼▼ */
+/* ================== Вертикальное меню слева ================== */
 .side-panel {
     position: fixed;
     top: 120px;
@@ -41,67 +41,49 @@ header nav a:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.side-panel h3 {
-    margin-top: 0;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.side-panel a {
-    display: block;
-    padding: 10px 12px;
-    text-decoration: none;
-    color: #333;
-    margin-bottom: 8px;
-    border-radius: 6px;
-    transition: 0.2s;
-}
-
-.side-panel a:hover {
-    background: #e6e8ee;
-}
-
-/* Кнопка скачать Положение */
+/* ================== Кнопка Скачать Положение ================== */
 .side-panel a.download-doc {
-    background: #2b66f0;
-    color: white;
-    font-weight: 600;
-    text-align: center;
     display: block;
-    padding: 10px 12px;
-    border-radius: 6px;
-    margin-top: 12px;
+    text-align: center;
     text-decoration: none;
-    transition: 0.2s;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    padding: 14px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #4a90e2, #2b66f0);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
 }
 
 .side-panel a.download-doc:hover {
-    background: #1f52c2;
+    background: linear-gradient(90deg, #5aa0f2, #3a78e0);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    transform: translateY(-2px);
 }
 
-/* ▼▼▼ Сдвиг основного контента для бокового меню ▼▼▼ */
+/* ================== Сдвиг основного контента для меню ================== */
 @media screen and (min-width: 1024px) {
     section {
-        margin-left: 270px; /* ширина меню + небольшой отступ */
+        margin-left: 270px; /* ширина меню + отступ */
     }
 }
 
-/* Адаптация для планшетов и мобильных */
+/* ================== Адаптация для планшетов и мобильных ================== */
 @media screen and (max-width: 1023px) {
     .side-panel {
-        position: relative; /* перестаёт быть фиксированным */
+        position: relative;
         width: 100%;
         margin-bottom: 20px;
         box-shadow: none;
     }
 
     section {
-        margin-left: 0; /* контент занимает всю ширину */
+        margin-left: 0;
     }
 }
 
-/* Стили футера */
+/* ================== Футер ================== */
 footer {
     padding: 20px;
     text-align: center;
