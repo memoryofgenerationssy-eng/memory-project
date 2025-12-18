@@ -32,10 +32,9 @@ if (themeToggleBtn) {
             localStorage.setItem('theme', 'light');
         }
     });
+}
 
-    // При загрузке страницы устанавливаем тему из localStorage
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-    }
-<script src="script.js"></script>
-</body>
+// При загрузке страницы устанавливаем тему из localStorage
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+}
