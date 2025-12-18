@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     // ===== ПОДГРУЗКА НОВОСТЕЙ =====
     fetch('news.json')
         .then(response => response.json())
@@ -21,14 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== ПЕРЕКЛЮЧАТЕЛЬ ТЕМНОЙ/СВЕТЛОЙ ТЕМЫ =====
     const themeToggleBtn = document.getElementById('theme-toggle');
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
-        });
+    if (!themeToggleBtn) return;
 
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-theme');
-        }
+    // Устанавливаем тему из localStorage при загрузке
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
     }
+
+    // Обработчик кнопки
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+    });
+
 });
