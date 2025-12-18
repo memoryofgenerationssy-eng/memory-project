@@ -2,30 +2,21 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Память Поколений — Главная</title>
-    <!-- Подключаем красивый шрифт -->
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- VK API -->
+    <script src="https://vk.com/js/api/openapi.js?168"></script>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-    <div class="header-inner">
-        <!-- Название проекта -->
-        <h1 class="project-title">Память Поколений</h1>
+    <h1>Память Поколений</h1>
 
-        <!-- Правая часть шапки: соцсети -->
-        <div class="header-right">
-            <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a>
-            <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a>
-            <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a>
-        </div>
-    </div>
-
-    <!-- Навигация под шапкой -->
-    <nav class="main-nav">
+    <nav>
         <a href="index.html">Главная</a>
         <a href="about.html">О проекте</a>
         <a href="team.html">Команда</a>
@@ -35,46 +26,51 @@
     </nav>
 </header>
 
-<!-- MAIN -->
 <main>
 
-    <!-- Блок о проекте -->
-    <section class="page-center">
+    <!-- О проекте кратко -->
+    <section>
         <h2>О проекте</h2>
-        <div class="card">
-            <p>Проект «Память Поколений» был создан Никитой Кулагиным 8 октября 2024 года. Мы сохраняем истории молодого поколения через видео, подкасты и офлайн-мероприятия. Основная цель проекта — формировать уважение к истории и ценности патриотизма среди молодёжи.</p>
-        </div>
+        <p>
+            «Память Поколений» — социально-просветительский проект,
+            направленный на сохранение исторической и личной памяти молодого поколения
+            через интервью, медиа, встречи и образовательные инициативы.
+        </p>
     </section>
 
-    <!-- Новости -->
-    <section class="page-center">
-        <h2>Новости</h2>
-        <div class="news-container">
-            <div class="news-card">
-                <h3>Запуск нового подкаста</h3>
-                <p>Мы запустили новый подкаст «Память Поколений» о семейных историях молодого поколения.</p>
-                <a href="#">Подробнее</a>
-            </div>
-            <div class="news-card">
-                <h3>Мастер-класс для волонтёров</h3>
-                <p>Прошёл мастер-класс по медиа и интервью для новых участников проекта.</p>
-                <a href="#">Подробнее</a>
-            </div>
-            <div class="news-card">
-                <h3>Новая встреча в школе</h3>
-                <p>Мы провели встречу с учениками 8 класса, рассказывая о проекте и ценности сохранения семейной истории.</p>
-                <a href="#">Подробнее</a>
-            </div>
+    <!-- НОВОСТИ ВК -->
+    <section>
+        <h2>Новости проекта</h2>
+
+        <div class="vk-news-wrapper">
+            <div id="vk_groups"></div>
         </div>
+
+        <script>
+            VK.Widgets.Group(
+                "vk_groups",
+                {
+                    mode: 4,
+                    wide: 1,
+                    height: 600,
+                    color1: "transparent",
+                    color2: "000000",
+                    color3: "5181B8"
+                },
+                227763139
+            );
+        </script>
+
     </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer>
-    <a href="https://t.me/memory_of_generations">Telegram</a> |
-    <a href="https://vk.com/memoryofgenerations">ВКонтакте</a> |
-    <a href="https://www.youtube.com/@PP_PamyatPokoleniy">YouTube</a>
+    <p>
+        <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a> |
+        <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a> |
+        <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a>
+    </p>
 </footer>
 
 </body>
