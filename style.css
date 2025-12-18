@@ -26,19 +26,17 @@ header {
     position: relative;
 }
 
-/* Внутренняя обертка */
 header .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Название проекта по центру */
 header .project-title {
     flex: 1;
     text-align: center;
     font-size: 3rem;
-    font-family: 'Russo One', sans-serif; /* новый шрифт */
+    font-family: 'Russo One', sans-serif;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -47,7 +45,6 @@ header .project-title {
     margin: 0;
 }
 
-/* Правая часть шапки с соцсетями */
 header .header-right a {
     color: white;
     margin-left: 15px;
@@ -97,7 +94,6 @@ section {
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
-/* Заголовки секций */
 section h2 {
     margin-top: 0;
     font-size: 2rem;
@@ -128,30 +124,6 @@ section p {
 .buttons a:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 28px rgba(37,99,235,0.45);
-}
-
-/* ===== ВЕРТИКАЛЬНОЕ МЕНЮ НА СТРАНИЦЕ "О ПРОЕКТЕ" ===== */
-.project-layout {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 40px;
-}
-
-.project-sidebar {
-    position: sticky;
-    top: 30px;
-    background: #f1f5f9;
-    border-radius: 18px;
-    padding: 25px;
-}
-
-.project-sidebar a {
-    display: block;
-    margin-bottom: 15px;
-}
-
-.project-sidebar .download-btn {
-    text-align: center;
 }
 
 /* ===== КОМАНДА ===== */
@@ -202,57 +174,7 @@ footer a {
     font-weight: 500;
 }
 
-/* ===== НОВОСТИ НА ГЛАВНОЙ ===== */
-.news-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.news-card {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 25px 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.news-card h3 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #1e3a8a;
-    margin-bottom: 10px;
-}
-
-.news-card p {
-    font-size: 1rem;
-    color: #374151;
-    margin-bottom: 15px;
-}
-
-.news-card a {
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 12px;
-    font-weight: 600;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: white;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.news-card a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37,99,235,0.35);
-}
-
-
+/* ===== НОВОСТИ ===== */
 .news-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -265,41 +187,20 @@ footer a {
     border-radius: 18px;
     padding: 25px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease;
-}
-
-.news-card:hover {
-    transform: translateY(-4px);
 }
 
 .news-card h3 {
-    font-size: 1.4rem;
+    margin-top: 0;
     margin-bottom: 10px;
+    font-size: 1.4rem;
     color: #1e3a8a;
 }
 
 .news-card p {
-    font-size: 1rem;
     color: #374151;
     margin-bottom: 15px;
 }
 
-.news-card a.button {
-    text-align: center;
-    display: inline-block;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: #fff;
-    border-radius: 12px;
-    font-weight: 600;
-    box-shadow: 0 8px 18px rgba(37,99,235,0.35);
-    transition: transform 0.2s, box-shadow 0.2s;
+.news-card .button {
+    font-size: 0.95rem;
 }
-
-.news-card a.button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(37,99,235,0.45);
-}
-
-
-
