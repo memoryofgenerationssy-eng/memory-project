@@ -47,21 +47,27 @@
     </section>
 
     <!-- Новости -->
-    <section class="page-center">
-        <h2>Новости</h2>
-        <div id="news-container" class="news-container"></div>
-    </section>
+    <!-- JS для загрузки новостей -->
+<script>
+fetch('news.json')
+    .then(response => response.json())
+    .then(newsData => {
+        const container = document.getElementById('news-container');
 
-</main>
-
-<!-- FOOTER -->
-<footer>
-    <a href="https://t.me/memory_of_generations">Telegram</a> |
-    <a href="https://vk.com/memoryofgenerations">ВКонтакте</a> |
-    <a href="https://www.youtube.com/@PP_PamyatPokoleniy">YouTube</a>
-</footer>
-
-<script src="news.js"></script>
+        newsData.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'news-card';
+            card.innerHTML = `
+                <h3>${item.title}</h3>
+                <p>${item.text}</p>
+                <a href="${item.link}" target="_blank" class="button">Подробнее</a>
+            `;
+            container.appendChild(card);
+        });
+    })
+    .catch(err => console.error('Ошибка при загрузке новостей:', err));
+</script>
 </body>
 </html>
+
 
