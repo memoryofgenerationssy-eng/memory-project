@@ -126,54 +126,6 @@ section p {
     box-shadow: 0 14px 28px rgba(37,99,235,0.45);
 }
 
-/* ===== КОМАНДА ===== */
-.team-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.team-card {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease;
-}
-
-.team-card:hover {
-    transform: translateY(-4px);
-}
-
-.team-photo {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-.role {
-    font-weight: 600;
-    color: #2563eb;
-    margin-top: 8px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    background: #0f172a;
-    color: #cbd5f5;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-footer a {
-    color: #93c5fd;
-    font-weight: 500;
-}
-
 /* ===== НОВОСТИ ===== */
 .news-container {
     display: grid;
@@ -205,66 +157,23 @@ footer a {
     font-size: 0.95rem;
 }
 
-/* Мобильная версия */
-@media (max-width: 768px) {
-    /* Шапка */
-    header .header-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    /* Кнопки соцсетей */
-    header .header-right {
-        margin-top: 15px;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    header .header-right a {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-
-    /* Заголовок проекта уменьшаем для мобильных */
-    header .project-title {
-        font-size: 2rem;
-    }
-
-    /* Навигация */
-    nav {
-        flex-direction: column;
-        gap: 8px;
-        margin-top: 15px;
-    }
-
-    nav a {
-        padding: 8px 12px;
-        font-size: 0.95rem;
-    }
-/* Кнопка переключения темы */
-.theme-button {
-    margin-left: 15px;
-    padding: 8px 16px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: white;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+/* ===== FOOTER ===== */
+footer {
+    background: #0f172a;
+    color: #cbd5f5;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-.theme-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(37,99,235,0.4);
+footer a {
+    color: #93c5fd;
+    font-weight: 500;
 }
 
-/* Тёмная тема */
+/* ===== ТЁМНАЯ ТЕМА ===== */
 .dark-theme {
-    background: #1f2937; /* основной фон */
-    color: #e5e7eb; /* основной текст */
+    background: #1f2937;
+    color: #e5e7eb;
 }
 
 .dark-theme header {
@@ -285,13 +194,44 @@ footer a {
     color: #f3f4f6;
 }
 
+.dark-theme .news-card {
+    background: #4b5563;
+    color: #f3f4f6;
+}
+
 .dark-theme .button,
-.dark-theme .buttons a,
-.dark-theme .theme-button {
+.dark-theme .buttons a {
     background: linear-gradient(135deg, #1e40af, #2563eb);
     color: #f3f4f6;
 }
 
-
-
-
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width: 768px) {
+    header .header-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    header .header-right {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    header .header-right a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    header .project-title {
+        font-size: 2rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+}
