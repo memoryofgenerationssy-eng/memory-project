@@ -12,14 +12,12 @@
 <header>
     <div class="header-inner">
         <h1 class="project-title">Память Поколений</h1>
-
         <div class="header-right">
             <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a>
             <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a>
             <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a>
         </div>
     </div>
-
     <nav class="main-nav">
         <a href="index.html">Главная</a>
         <a href="about.html">О проекте</a>
@@ -38,42 +36,14 @@
         <h2>О проекте</h2>
         <div class="card">
             <p>Проект «Память Поколений» был создан Никитой Кулагиным 8 октября 2024 года. Мы сохраняем истории молодого поколения через видео, подкасты и офлайн-мероприятия. Основная цель проекта — формировать уважение к истории и ценности патриотизма среди молодёжи.</p>
-            <p>Со временем проект расширил своё направление: теперь основной фокус направлен на молодежь. Мы стремимся воспитывать чувство гражданской ответственности и уважения к истории через интервью, лекции, подкасты и медиа-контент.</p>
         </div>
     </section>
 
     <!-- Новости -->
-  <section class="page-center">
-    <h2>Новости</h2>
-    <div class="news-container" id="news-container">
-        <!-- Новости будут подгружаться сюда -->
-    </div>
-</section>
-
-<!-- Подключаем JS внизу body -->
-<script src="news.js"></script>
-
-
-<!-- Добавляем перед закрывающим </body> -->
-<script>
-async function loadNews() {
-    const response = await fetch('news.json');
-    const news = await response.json();
-    const container = document.getElementById('news-container');
-    container.innerHTML = '';
-    news.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'news-card';
-        card.innerHTML = `
-            <h3>${item.title}</h3>
-            <p>${item.text}</p>
-            <a href="${item.link}">Подробнее</a>
-        `;
-        container.appendChild(card);
-    });
-}
-loadNews();
-</script>
+    <section class="page-center">
+        <h2>Новости</h2>
+        <div id="news-container" class="news-container"></div>
+    </section>
 
 </main>
 
@@ -84,7 +54,6 @@ loadNews();
     <a href="https://www.youtube.com/@PP_PamyatPokoleniy">YouTube</a>
 </footer>
 
+<script src="news.js"></script>
 </body>
 </html>
-
-
