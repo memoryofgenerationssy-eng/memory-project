@@ -18,37 +18,51 @@ a {
 
 /* ===== HEADER ===== */
 header {
+    width: 100%;
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
     color: white;
-    padding: 50px 20px 35px;
+    padding: 40px 20px 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* Внутренняя обертка */
+header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Название проекта по центру */
+header .project-title {
+    flex: 1;
     text-align: center;
-}
-
-/* ЛОГОТИП — ФИКС */
-header .logo {
-    width: 90px;
-    max-width: 90px;
-    height: auto;
-    margin: 0 auto 15px;
-    display: block;
-}
-
-/* Заголовок */
-header h1 {
-    margin: 10px 0 5px;
-    font-size: 2.4rem;
+    font-size: 3rem;
+    font-family: 'Russo One', sans-serif; /* новый шрифт */
     font-weight: 700;
-}
-
-header p {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
     margin: 0;
-    font-size: 1.1rem;
-    opacity: 0.9;
 }
 
-/* ===== НАВИГАЦИЯ (СВЕРХУ) ===== */
+/* Правая часть шапки с соцсетями */
+header .header-right a {
+    color: white;
+    margin-left: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+header .header-right a:hover {
+    color: #e74c3c;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
 nav {
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -95,7 +109,7 @@ section p {
     color: #374151;
 }
 
-/* ===== КНОПКИ (ЧЁТКО ВИДНО, ЧТО ЭТО КНОПКИ) ===== */
+/* ===== КНОПКИ ===== */
 .button,
 .buttons a {
     display: inline-flex;
