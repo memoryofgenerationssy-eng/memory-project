@@ -43,26 +43,33 @@
     </section>
 
     <!-- Новости -->
-    <section class="page-center">
-        <h2>Новости</h2>
-        <div class="news-container">
-            <div class="news-card">
-                <h3>Запуск нового подкаста</h3>
-                <p>Мы запустили новый подкаст «Память Поколений» о семейных историях молодого поколения. В первом выпуске рассказываем истории молодых героев.</p>
-                <a href="#">Подробнее</a>
-            </div>
-            <div class="news-card">
-                <h3>Мастер-класс для волонтёров</h3>
-                <p>Прошёл мастер-класс по медиа и интервью для новых участников проекта. Волонтёры узнали, как правильно проводить интервью и работать с видео.</p>
-                <a href="#">Подробнее</a>
-            </div>
-            <div class="news-card">
-                <h3>Новая встреча в школе</h3>
-                <p>Мы провели встречу с учениками 8 класса, рассказывая о проекте и ценности сохранения семейной истории. Ребята поделились своими историями и впечатлениями.</p>
-                <a href="#">Подробнее</a>
-            </div>
-        </div>
-    </section>
+   <section class="page-center">
+    <h2>Новости</h2>
+    <div class="news-container" id="news-container">
+        <!-- Новости подгружаются сюда автоматически -->
+    </div>
+</section>
+
+<!-- Добавляем перед закрывающим </body> -->
+<script>
+async function loadNews() {
+    const response = await fetch('news.json');
+    const news = await response.json();
+    const container = document.getElementById('news-container');
+    container.innerHTML = '';
+    news.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        card.innerHTML = `
+            <h3>${item.title}</h3>
+            <p>${item.text}</p>
+            <a href="${item.link}">Подробнее</a>
+        `;
+        container.appendChild(card);
+    });
+}
+loadNews();
+</script>
 
 </main>
 
@@ -75,3 +82,4 @@
 
 </body>
 </html>
+
