@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Память Поколений — Главная</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Подключение шрифта для заголовка -->
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -38,34 +40,15 @@
         <h2>О проекте</h2>
         <div class="card">
             <p>Проект «Память Поколений» был создан Никитой Кулагиным 8 октября 2024 года. Мы сохраняем истории молодого поколения через видео, подкасты и офлайн-мероприятия. Основная цель проекта — формировать уважение к истории и ценности патриотизма среди молодёжи.</p>
+            <p>Наша команда активно работает над созданием качественного контента, взаимодействует с волонтёрами и организует встречи с молодёжью для передачи знаний и опыта. Мы верим, что каждая история важна, и стараемся донести её до широкой аудитории.</p>
+            <p>Присоединяйтесь к проекту, делитесь своими воспоминаниями и становитесь частью большой и дружной команды «Память Поколений».</p>
         </div>
     </section>
 
     <!-- Новости -->
     <section class="page-center">
         <h2>Новости</h2>
-        <div id="news-container" class="news-container">
-            <!-- Новости подгружаются автоматически из news.json -->
-        </div>
-        <div class="news-load-more">
-            <button id="load-more" class="button">Показать ещё</button>
-        </div>
-    </section>
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-    <a href="https://t.me/memory_of_generations">Telegram</a> |
-    <a href="https://vk.com/memoryofgenerations">ВКонтакте</a> |
-    <a href="https://www.youtube.com/@PP_PamyatPokoleniy">YouTube</a>
-</footer>
-
-<!-- СКРИПТ ДЛЯ ЛЕНТЫ НОВОСТЕЙ -->
-<script>
-fetch('news.json')
-.then(res => res.json())
-.then(data => {
-    const container = document.getElementById('news-container');
-    let index = 0;
-    const batch = 3; // по
+        <div class="news-container">
+            <div class="news-card">
+                <h3>Запуск нового подкаста</h3>
+                <p>Мы запустили новый подкаст «Память Поколений» о семейных историях молодого поколения.</p
