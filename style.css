@@ -253,5 +253,53 @@ footer a {
 }
 
 
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.news-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+}
+
+.news-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+.news-card p {
+    font-size: 1rem;
+    color: #374151;
+    margin-bottom: 15px;
+}
+
+.news-card a.button {
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 8px 18px rgba(37,99,235,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-card a.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(37,99,235,0.45);
+}
+
 
 
