@@ -19,7 +19,7 @@ a {
 /* ===== HEADER ===== */
 header {
     width: 100%;
-    background: linear-gradient(135deg, #1b2a70, #1f3bb8);
+    background: linear-gradient(135deg, #151f5a, #1a2ea0);
     color: white;
     padding: 40px 20px 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -244,4 +244,5 @@ footer a {
         font-size: 0.95rem;
     }
 }
+
 
