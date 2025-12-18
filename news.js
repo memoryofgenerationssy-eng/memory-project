@@ -37,4 +37,5 @@ if (themeToggleBtn) {
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-theme');
     }
-}
+<script src="script.js"></script>
+</body>
