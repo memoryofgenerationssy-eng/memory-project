@@ -243,6 +243,55 @@ footer a {
         padding: 8px 12px;
         font-size: 0.95rem;
     }
+/* Кнопка переключения темы */
+.theme-button {
+    margin-left: 15px;
+    padding: 8px 16px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.theme-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37,99,235,0.4);
+}
+
+/* Тёмная тема */
+.dark-theme {
+    background: #1f2937; /* основной фон */
+    color: #e5e7eb; /* основной текст */
+}
+
+.dark-theme header {
+    background: linear-gradient(135deg, #111827, #1e293b);
+}
+
+.dark-theme nav a {
+    background: rgba(255,255,255,0.1);
+    color: #e5e7eb;
+}
+
+.dark-theme nav a:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.dark-theme section {
+    background: #374151;
+    color: #f3f4f6;
+}
+
+.dark-theme .button,
+.dark-theme .buttons a,
+.dark-theme .theme-button {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    color: #f3f4f6;
+}
+
+
 
 
