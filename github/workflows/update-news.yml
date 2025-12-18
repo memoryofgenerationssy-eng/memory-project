@@ -1,0 +1,37 @@
+name: Update VK News
+
+on:
+  schedule:
+    - cron: '0 * * * *' # каждый час
+  workflow_dispatch:
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt-get install -y jq curl xml2json
+
+      - name: Fetch VK RSS
+        run: |
+          RSS_URL="https://rsshub.app/vk/group/memoryofgenerations"
+          curl -s $RSS_URL > rss.xml
+
+      - name: Convert RSS to JSON
+        run: |
+          xml2json rss.xml > news_raw.json
+
+      - name: Keep only title, description, pubDate
+        run: |
+          cat news_raw.json | jq '[.rss.channel.item[] | {title:.title, text:.description, date:.pubDate}]' > news.json
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add news.json
+          git commit -m "Auto-update news.json from VK"
+          git push
