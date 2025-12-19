@@ -637,6 +637,66 @@ body.dark-theme .footer-copy {
     padding: 5px 10px;
     cursor: pointer;
 }
+/* ===== Акцентные hover-эффекты для ссылок и кнопок ===== */
+.header-right a,
+.header-right .button {
+    transition: color 0.3s, transform 0.2s;
+}
+
+.header-right a:hover,
+.header-right .button:hover {
+    color: #0077ff; /* Акцентный цвет */
+    transform: scale(1.05);
+}
+
+/* ===== Мини-подсветка навигации ===== */
+.main-nav a {
+    transition: color 0.3s, border-bottom 0.3s;
+    text-decoration: none;
+    color: #333;
+}
+
+.main-nav a:hover {
+    color: #0077ff;
+    border-bottom: 2px solid #0077ff;
+}
+
+/* ===== Карточки новостей ===== */
+.news-card {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+/* ===== Округление кнопок и карточек ===== */
+.card,
+.button {
+    border-radius: 8px;
+}
+
+/* ===== Пространство в секциях ===== */
+.page-center {
+    padding: 40px 20px;
+}
+
+.page-center h2 {
+    margin-bottom: 20px;
+}
+
+/* ===== Слегка смягченный текст заголовков ===== */
+.project-title,
+.page-center h2 {
+    font-weight: 600;
+}
+
+/* ===== Плавные переходы для всех ссылок и кнопок ===== */
+a, button {
+    transition: all 0.3s ease;
+}
+
+
 
 
 
