@@ -1,12 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
+// ===== ПОДГРУЗКА НОВОСТЕЙ =====
+const newsContainer = document.getElementById('news-container');
 
-    // ===== ПОДГРУЗКА НОВОСТЕЙ =====
+if (newsContainer) {
     fetch('news.json')
         .then(response => response.json())
         .then(newsData => {
-            const container = document.getElementById('news-container');
-            if (!container) return;
-
             newsData.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'news-card';
@@ -15,25 +13,46 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${item.text}</p>
                     <a href="${item.link}" target="_blank" class="button">Подробнее</a>
                 `;
-                container.appendChild(card);
+                newsContainer.appendChild(card);
             });
         })
         .catch(err => console.error('Ошибка при загрузке новостей:', err));
+}
 
-    // ===== ПЕРЕКЛЮЧАТЕЛЬ ТЕМНОЙ/СВЕТЛОЙ ТЕМЫ =====
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (!themeToggleBtn) return;
+// ===== ПЕРЕКЛЮЧАТЕЛЬ ТЕМНОЙ/СВЕТЛОЙ ТЕМЫ =====
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+if (themeToggleBtn) {
+
+    // Функция обновления смайлика
+    const updateThemeIcon = () => {
+        if (document.body.classList.contains('dark-theme')) {
+            themeToggleBtn.textContent = '☀️'; // солнце для светлой темы
+        } else {
+            themeToggleBtn.textContent = '🌙'; // луна для темной темы
+        }
+    };
 
     // Устанавливаем тему из localStorage при загрузке
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-theme');
     }
 
-    // Обработчик кнопки
+    // Обновляем смайлик при загрузке
+    updateThemeIcon();
+
+    // Обработчик клика на кнопку
     themeToggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
-        const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-        localStorage.setItem('theme', theme);
-    });
 
-});
+        // Сохраняем выбор пользователя
+        if (document.body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+
+        // Обновляем смайлик после переключения
+        updateThemeIcon();
+    });
+}
