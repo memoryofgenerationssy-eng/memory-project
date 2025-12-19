@@ -657,6 +657,19 @@ body.dark-theme .form-button {
     border: none !important;     /* убираем рамку */
     padding: 0 !important;       /* убираем внутренние отступы */
 }
+/* VPN предупреждение */
+.vpn-warning {
+    font-size: 0.85rem;       /* немного меньше основного текста */
+    color: #f97316;           /* оранжевый, выделяет текст, но не слишком ярко */
+    margin-bottom: 15px;
+}
+
+/* Тёмная тема для VPN предупреждения */
+body.dark-theme .vpn-warning {
+    color: #fbbf24;           /* светло-оранжевый для тёмного фона */
+}
+
+
 
 
 
