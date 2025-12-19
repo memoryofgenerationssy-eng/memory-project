@@ -1,25 +1,70 @@
-<section class="page-center volunteer-section">
-    <h2>Стать волонтёром</h2>
-    <p>Если вы хотите присоединиться к нашей команде и помогать в проектах «Память Поколений», заполните форму ниже:</p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Память Поколений — Волонтёрам</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Кнопка для открытия формы -->
-    <button id="volunteer-btn" class="form-button button">Заполнить форму</button>
-
-    <!-- Скрытая форма Google (iframe) -->
-    <div id="volunteer-form-container" class="volunteer-form-container" style="display:none; margin-top:20px;">
-        <iframe 
-            src="https://docs.google.com/forms/d/e/ВАШ_ID_FORM/viewform?embedded=true" 
-            width="100%" 
-            height="800" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-            Загружается…
-        </iframe>
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <h1 class="project-title">Память Поколений</h1>
+        <div class="header-right">
+            <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a>
+            <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a>
+            <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a>
+            <button id="theme-toggle" class="button">Тёмная тема</button>
+        </div>
     </div>
-</section>
 
+    <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О проекте</a>
+        <a href="team.html">Команда</a>
+        <a href="volunteers.html">Волонтёрам</a>
+        <a href="videos.html">Видео</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<!-- MAIN -->
+<main>
+    <section class="page-center">
+        <h2>Стать волонтёром</h2>
+        <div class="card">
+            <p>Если вы хотите присоединиться к нашей команде и помогать в проектах «Память Поколений», заполните форму ниже:</p>
+
+            <button id="volunteer-btn" class="button form-button">Заполнить форму</button>
+
+            <div id="volunteer-form-container" class="volunteer-form-container" style="display:none; margin-top:20px;">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/https://docs.google.com/forms/d/e/1FAIpQLScDDa-4gIW9uJBGxhSD9Q_oLMXfESPabqif4Y_A_vX-yzsYzA/viewform?embedded=true" 
+                    width="100%" 
+                    height="800" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Загружается…
+                </iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <a href="https://t.me/memory_of_generations">Telegram</a> |
+    <a href="https://vk.com/memoryofgenerations">ВКонтакте</a> |
+    <a href="https://www.youtube.com/@PP_PamyatPokoleniy">YouTube</a>
+</footer>
+
+<!-- Скрипты -->
+<script src="script.js"></script>
 <script>
+    // Показ/скрытие Google формы
     const volunteerBtn = document.getElementById('volunteer-btn');
     const volunteerForm = document.getElementById('volunteer-form-container');
 
@@ -33,3 +78,6 @@
         }
     });
 </script>
+
+</body>
+</html>
