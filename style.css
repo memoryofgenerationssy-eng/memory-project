@@ -643,6 +643,22 @@ body.dark-theme .form-button {
     margin-left: 10px; /* небольшое смещение от ссылок */
     display: inline-block;
 }
+/* ===== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ (СМАЙЛИК) ===== */
+#theme-toggle {
+    all: unset;            /* убираем все стандартные стили */
+    cursor: pointer;       /* курсор при наведении */
+    font-size: 1.5rem;     /* размер смайлика */
+    line-height: 1;        /* корректный высотный интервал */
+    display: inline-block; /* корректное расположение */
+    margin-left: 10px;     /* небольшой отступ от соседних элементов */
+
+    background: none !important; /* убираем фон */
+    box-shadow: none !important; /* убираем тень */
+    border: none !important;     /* убираем рамку */
+    padding: 0 !important;       /* убираем внутренние отступы */
+}
+
+
 
 
 
