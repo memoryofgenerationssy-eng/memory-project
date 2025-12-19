@@ -577,5 +577,40 @@ body.dark-theme .news-card {
     padding: 25px;
     border: 1px solid #3b82f6;
 }
+/* =========================
+   КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ — МЕНЕЕ ЗАМЕТНАЯ
+   ========================= */
+
+/* Светлая тема */
+#theme-toggle {
+    background: #2563eb; /* сплошной мягкий синий */
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* мягкая тень */
+    font-size: 0.95rem; /* чуть меньше */
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#theme-toggle:hover {
+    background: #1e40af; /* чуть темнее при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Тёмная тема */
+body.dark-theme #theme-toggle {
+    background: #1e40af;
+    color: #f3f4f6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme #theme-toggle:hover {
+    background: #2563eb;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+
 
 
