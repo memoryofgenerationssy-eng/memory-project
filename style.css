@@ -601,7 +601,9 @@ body.dark-theme .footer-copy {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */ /* убрали белый фон */
+    background-color: transparent;   /* или оставляем без этой строки */
+
 }
 
 /* --- Левая часть: смайлик + название --- */
@@ -635,6 +637,7 @@ body.dark-theme .footer-copy {
     padding: 5px 10px;
     cursor: pointer;
 }
+
 
 
 
