@@ -548,4 +548,34 @@ body.dark-theme footer {
 body.dark-theme footer a {
     color: #93c5fd;
 }
+/* ============================
+   ТЁМНАЯ ТЕМА — ОБВОДКА И ОБЪЁМ
+   ============================ */
+
+/* Секции */
+body.dark-theme section {
+    background: #020617;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    border: 1px solid #3b82f6; /* голубая граница */
+}
+
+/* Карточка "О проекте" */
+body.dark-theme .card {
+    background: #020617;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    border-radius: 18px;
+    padding: 25px;
+    border: 1px solid #3b82f6;
+}
+
+/* Новости */
+body.dark-theme .news-card {
+    background: #020617;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    border-radius: 18px;
+    padding: 25px;
+    border: 1px solid #3b82f6;
+}
+
 
