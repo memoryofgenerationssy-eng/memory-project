@@ -595,6 +595,48 @@ body.dark-theme .footer-copy {
   font-size: 32px;   /* Размер смайлика */
   margin-right: 10px; /* Отступ между смайликом и текстом */
 }
+/* --- Общий стиль шапки --- */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+}
+
+/* --- Левая часть: смайлик + название --- */
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-emoji {
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+.project-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin: 0; /* Убираем отступы h1 */
+}
+
+/* --- Правая часть: соцсети и кнопка --- */
+.header-right a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.header-right .button {
+    margin-left: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
 
 
 
