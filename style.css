@@ -170,41 +170,6 @@ footer a {
     font-weight: 500;
 }
 
-/* ===== ТЁМНАЯ ТЕМА ===== */
-.dark-theme {
-    background: #1f2937;
-    color: #e5e7eb;
-}
-
-.dark-theme header {
-    background: linear-gradient(135deg, #111827, #1e293b);
-}
-
-.dark-theme nav a {
-    background: rgba(255,255,255,0.1);
-    color: #e5e7eb;
-}
-
-.dark-theme nav a:hover {
-    background: rgba(255,255,255,0.25);
-}
-
-.dark-theme section {
-    background: #374151;
-    color: #f3f4f6;
-}
-
-.dark-theme .news-card {
-    background: #4b5563;
-    color: #f3f4f6;
-}
-
-.dark-theme .button,
-.dark-theme .buttons a {
-    background: linear-gradient(135deg, #1e40af, #2563eb);
-    color: #f3f4f6;
-}
-
 /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
 @media (max-width: 768px) {
     header .header-inner {
@@ -234,66 +199,13 @@ footer a {
         padding: 8px 12px;
         font-size: 0.95rem;
     }
-/* ===== ТЁМНАЯ ТЕМА — КОНТЕНТ ===== */
-.dark-theme body {
-    background: #0f172a;
-    color: #e5e7eb;
-}
 
-/* Секции */
-.dark-theme section {
-    background: #1f2937;
-    color: #e5e7eb;
-}
-
-.dark-theme section h2 {
-    color: #f9fafb;
-}
-
-.dark-theme section p {
-    color: #d1d5db;
-}
-
-/* Карточки новостей */
-.dark-theme .news-card {
-    background: #111827;
-}
-
-.dark-theme .news-card h3 {
-    color: #93c5fd;
-}
-
-.dark-theme .news-card p {
-    color: #d1d5db;
-}
-
-/* Кнопки */
-.dark-theme .button {
-    background: linear-gradient(135deg, #1e40af, #2563eb);
-    color: #f9fafb;
-}
-
-/* Навигация */
-.dark-theme nav a {
-    color: #e5e7eb;
-}
-
-/* Footer */
-.dark-theme footer {
-    background: #020617;
-    color: #9ca3af;
-}
-
-.dark-theme footer a {
-    color: #93c5fd;
-}
-
-    /* =========================
-   ТЁМНАЯ ТЕМА — ТЕКСТ + ФОН
-   ========================= */
+/* ============================
+   ТЁМНАЯ ТЕМА — FINAL VERSION
+   ============================ */
 
 body.dark-theme {
-    background: #0b1220;
+    background: #020617;
     color: #e5e7eb;
 }
 
@@ -302,30 +214,32 @@ body.dark-theme header {
     background: linear-gradient(135deg, #020617, #020617);
 }
 
-/* НАВИГАЦИЯ */
+/* NAVIGATION */
 body.dark-theme nav a {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.1);
     color: #e5e7eb;
 }
 
 body.dark-theme nav a:hover {
-    background: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.2);
 }
 
-/* СЕКЦИИ */
+/* SECTIONS */
 body.dark-theme section {
     background: #020617;
 }
 
-/* ВСЕ ТЕКСТЫ ВНУТРИ СЕКЦИЙ */
-body.dark-theme section h2,
-body.dark-theme section h3,
-body.dark-theme section p,
-body.dark-theme section li {
+/* ВСЕ ТЕКСТЫ */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme span {
     color: #e5e7eb;
 }
 
-/* НОВОСТИ */
+/* NEWS */
 body.dark-theme .news-card {
     background: #020617;
 }
@@ -338,7 +252,7 @@ body.dark-theme .news-card p {
     color: #cbd5e1;
 }
 
-/* КНОПКИ */
+/* BUTTONS */
 body.dark-theme .button {
     background: linear-gradient(135deg, #1e40af, #2563eb);
     color: #ffffff;
@@ -352,77 +266,5 @@ body.dark-theme footer {
 
 body.dark-theme footer a {
     color: #93c5fd;
-}
-
-    /* =========================
-   ФИКС ТЕКСТА В ТЁМНОЙ ТЕМЕ
-   ========================= */
-
-body.dark-theme p,
-body.dark-theme span,
-body.dark-theme li {
-    color: #e5e7eb !important;
-}
-
-/* Карточка "О проекте" */
-body.dark-theme .card {
-    background: #020617;
-}
-
-body.dark-theme .card p {
-    color: #e5e7eb !important;
-}
-
-/* Центрированные секции */
-body.dark-theme .page-center p {
-    color: #e5e7eb !important;
-}
-
-/* Новости */
-body.dark-theme .news-card p {
-    color: #cbd5e1 !important;
-}
-    /* ===============================
-   ПРИНУДИТЕЛЬНЫЙ ФИКС ТЕКСТА
-   ДЛЯ ТЁМНОЙ ТЕМЫ
-   =============================== */
-
-body.dark-theme {
-    background: #020617;
-    color: #e5e7eb;
-}
-
-/* ОСНОВНОЙ ТЕКСТ */
-body.dark-theme p {
-    color: #e5e7eb !important;
-}
-
-/* ТЕКСТ В СЕКЦИЯХ */
-body.dark-theme section p {
-    color: #e5e7eb !important;
-}
-
-/* ТЕКСТ В MAIN */
-body.dark-theme main p {
-    color: #e5e7eb !important;
-}
-
-/* СПИСКИ */
-body.dark-theme li {
-    color: #e5e7eb !important;
-}
-
-/* КАРТОЧКИ */
-body.dark-theme section {
-    background: #020617;
-}
-
-/* НОВОСТИ */
-body.dark-theme .news-card {
-    background: #020617;
-}
-
-body.dark-theme .news-card p {
-    color: #e5e7eb !important;
 }
 
