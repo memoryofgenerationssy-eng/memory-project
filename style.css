@@ -492,6 +492,69 @@ body.dark-theme .team-card h3 {
 body.dark-theme .footer-copy {
     color: #64748b;
 }
+/* --- Шапка сайта --- */
+.site-header {
+  background-color: #ffffff; /* Цвет фона шапки */
+  padding: 10px 20px;
+}
+
+/* --- Контейнер с логотипом и текстом --- */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* --- SVG песочные часы --- */
+.hourglass {
+  margin-right: 10px; /* Отступ между часами и текстом */
+  width: 40px;         /* Ширина часов */
+  height: 60px;        /* Высота часов */
+}
+
+/* --- Верхний песок --- */
+.sand-top {
+  transform-origin: center top;
+  animation: topSandFlow 4s infinite linear;
+}
+
+/* --- Нижний песок --- */
+.sand-bottom {
+  transform-origin: center bottom;
+  animation: bottomSandFill 4s infinite linear;
+}
+
+/* --- Падающий песок (струйка) --- */
+.sand-flow {
+  animation: flow 4s infinite linear;
+}
+
+/* --- Анимация верхнего песка --- */
+@keyframes topSandFlow {
+  0% { transform: scaleY(1); opacity:1; }
+  100% { transform: scaleY(0); opacity:0.3; }
+}
+
+/* --- Анимация нижнего песка --- */
+@keyframes bottomSandFill {
+  0% { transform: scaleY(0); opacity:0.3; }
+  100% { transform: scaleY(1); opacity:1; }
+}
+
+/* --- Анимация падающего песка --- */
+@keyframes flow {
+  0% { height: 0; opacity:0; }
+  25% { height: 10px; opacity:1; }
+  50% { height: 0; opacity:0; }
+  100% { height: 0; opacity:0; }
+}
+
+/* --- Заголовок сайта --- */
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+}
+
 
 
 
