@@ -381,3 +381,31 @@ body.dark-theme .volunteer-section::before {
 body.dark-theme .video-section::before {
     background: radial-gradient(circle, rgba(96,165,250,0.1) 1px, transparent 1px);
 }
+/* ==========================
+   ОБЪЁМ БЛОКОВ В ТЁМНОЙ ТЕМЕ
+   ========================== */
+body.dark-theme section,
+body.dark-theme .card,
+body.dark-theme .news-card {
+    /* чуть светлее фон, чтобы блоки выделялись */
+    background: #1a1f2c; 
+    /* усиливаем тень для объёма */
+    box-shadow: 0 8px 20px rgba(100, 150, 255, 0.4);
+    border: 1px solid #3b82f6; /* лёгкий голубой контур */
+}
+
+/* Заголовки внутри блоков */
+body.dark-theme section h2,
+body.dark-theme .card h2,
+body.dark-theme .news-card h3 {
+    color: #e5e7eb;
+}
+
+/* Текст внутри блоков */
+body.dark-theme section p,
+body.dark-theme .card p,
+body.dark-theme .news-card p {
+    color: #d1d5db;
+}
+
+
