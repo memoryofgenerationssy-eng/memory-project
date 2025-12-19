@@ -3,26 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Видео — Память Поколений</title>
+    <title>Память Поколений — Видео</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
     <div class="header-inner">
-        <!-- Название проекта -->
         <h1 class="project-title">Память Поколений</h1>
-
-        <!-- Правая часть: соцсети + кнопка темы -->
         <div class="header-right">
             <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a>
             <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a>
             <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a>
-            <button class="theme-button" id="theme-toggle">🌙 Тёмная тема</button>
+            <button id="theme-toggle" class="button">Тёмная тема</button>
         </div>
     </div>
-
-    <!-- Навигация -->
     <nav class="main-nav">
         <a href="index.html">Главная</a>
         <a href="about.html">О проекте</a>
@@ -33,33 +28,25 @@
     </nav>
 </header>
 
-
-
-<section class="page-center">
-    <h2>Видео</h2>
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/vZiIbUdMAeA" 
-            title="Видео проекта" frameborder="0" allowfullscreen>
-        </iframe>
-    </div>
-    <div class="video-thumb">
-        <img src="images/video2.jpg" alt="Видео 2" width="300">
-        <p>Подкаст о ценностях</p>
-    </div>
-    <div class="video-thumb">
-        <img src="images/video3.jpg" alt="Видео 3" width="300">
-        <p>Репортаж с мероприятия</p>
-    </div>
-</section>
+<main>
+    <section class="page-center">
+        <h2>Видео</h2>
+        <div class="card">
+            <p>Все наши видео доступны на YouTube. Здесь будут опубликованы интервью, подкасты и записи мероприятий.</p>
+        </div>
+        <!-- Пример вставки видео с YouTube -->
+        <div class="card">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/ТВОЙ_ВИДЕО_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+</main>
 
 <footer>
-    <p>© 2025 Память Поколений</p>
+    <a href="https://t.me/memory_of_generations">Telegram</a> |
+    <a href="https://vk.com/memoryofgenerations">ВКонтакте</a> |
+    <a href="https://www.youtube.com/@PP_PamyatPokoleniy">YouTube</a>
 </footer>
 
+<script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
