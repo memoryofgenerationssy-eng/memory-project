@@ -408,4 +408,32 @@ body.dark-theme .news-card p {
     color: #d1d5db;
 }
 
+/* ==========================
+   ВЫРАВНИВАНИЕ ТЕКСТА В БЛОКАХ
+   ========================== */
+body.dark-theme section,
+body.dark-theme .card,
+body.dark-theme .news-card {
+    padding: 40px; /* увеличиваем внутренние отступы */
+    text-align: center; /* выравниваем текст по центру */
+}
+
+/* Заголовки можно оставить слева или тоже по центру */
+body.dark-theme section h2,
+body.dark-theme .card h2,
+body.dark-theme .news-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Параграфы */
+body.dark-theme section p,
+body.dark-theme .card p,
+body.dark-theme .news-card p {
+    text-align: center;
+    line-height: 1.6;
+}
+
+
+
 
