@@ -85,7 +85,6 @@ main {
     padding: 0 20px;
 }
 
-/* Секции */
 section {
     background: white;
     border-radius: 18px;
@@ -153,10 +152,6 @@ section p {
     margin-bottom: 15px;
 }
 
-.news-card .button {
-    font-size: 0.95rem;
-}
-
 /* ===== FOOTER ===== */
 footer {
     background: #0f172a;
@@ -199,6 +194,7 @@ footer a {
         padding: 8px 12px;
         font-size: 0.95rem;
     }
+}
 
 /* ============================
    ТЁМНАЯ ТЕМА — FINAL VERSION
@@ -225,18 +221,19 @@ body.dark-theme nav a:hover {
 }
 
 /* SECTIONS */
-body.dark-theme section {
+body.dark-theme section,
+body.dark-theme .card {
     background: #020617;
 }
 
-/* ВСЕ ТЕКСТЫ */
-body.dark-theme h1,
-body.dark-theme h2,
-body.dark-theme h3,
-body.dark-theme p,
-body.dark-theme li,
-body.dark-theme span {
-    color: #e5e7eb;
+/* ВСЕ ТЕКСТЫ В СЕКЦИЯХ */
+body.dark-theme section h2,
+body.dark-theme section h3,
+body.dark-theme section p,
+body.dark-theme section li,
+body.dark-theme section span,
+body.dark-theme .card p {
+    color: #e5e7eb !important;
 }
 
 /* NEWS */
@@ -267,4 +264,3 @@ body.dark-theme footer {
 body.dark-theme footer a {
     color: #93c5fd;
 }
-
