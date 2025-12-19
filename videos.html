@@ -11,19 +11,14 @@
 <!-- HEADER -->
 <header>
     <div class="header-inner">
-        <!-- Название проекта -->
         <h1 class="project-title">Память Поколений</h1>
-
-        <!-- Правая часть: соцсети + кнопка смены темы -->
         <div class="header-right">
             <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a>
             <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a>
             <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a>
-            <button id="theme-toggle">🌙</button>
+            <button id="theme-toggle" class="theme-button">🌙</button>
         </div>
     </div>
-
-    <!-- Навигация -->
     <nav class="main-nav">
         <a href="index.html">Главная</a>
         <a href="about.html">О проекте</a>
@@ -34,20 +29,24 @@
     </nav>
 </header>
 
-
+<!-- MAIN -->
 <main>
     <section class="page-center">
         <h2>Видео</h2>
-        <div class="card">
-            <p>Все наши видео доступны на YouTube. Здесь будут опубликованы интервью, подкасты и записи мероприятий.</p>
-        </div>
-        <!-- Пример вставки видео с YouTube -->
-        <div class="card">
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/vZiIbUdMAeA" frameborder="0" allowfullscreen></iframe>
+
+        <!-- VPN предупреждение -->
+        <p class="vpn-warning">
+            Обратите внимание: видео на нашем сайте можно смотреть только при включенном VPN.
+        </p>
+
+        <!-- Контейнер для видео -->
+        <div class="video-container">
+            <!-- Вставляйте здесь ваши видео -->
         </div>
     </section>
 </main>
 
+<!-- FOOTER -->
 <footer>
     <a href="https://t.me/memory_of_generations">Telegram</a> |
     <a href="https://vk.com/memoryofgenerations">ВКонтакте</a> |
@@ -57,5 +56,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
