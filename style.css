@@ -354,3 +354,33 @@ body.dark-theme footer a {
     color: #93c5fd;
 }
 
+    /* =========================
+   ФИКС ТЕКСТА В ТЁМНОЙ ТЕМЕ
+   ========================= */
+
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme li {
+    color: #e5e7eb !important;
+}
+
+/* Карточка "О проекте" */
+body.dark-theme .card {
+    background: #020617;
+}
+
+body.dark-theme .card p {
+    color: #e5e7eb !important;
+}
+
+/* Центрированные секции */
+body.dark-theme .page-center p {
+    color: #e5e7eb !important;
+}
+
+/* Новости */
+body.dark-theme .news-card p {
+    color: #cbd5e1 !important;
+}
+
+
