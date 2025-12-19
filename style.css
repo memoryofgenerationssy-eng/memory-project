@@ -610,6 +610,32 @@ body.dark-theme #theme-toggle:hover {
     background: #2563eb;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
+/* Кнопка формы волонтёров */
+.form-button {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s;
+    opacity: 0.85; /* менее заметная */
+}
+
+.form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37,99,235,0.35);
+    opacity: 1;
+}
+
+/* Темная тема */
+body.dark-theme .form-button {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #f3f4f6;
+}
+
+
 
 
 
