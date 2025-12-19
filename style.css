@@ -480,6 +480,20 @@ body.dark-theme .team-card p,
 body.dark-theme .team-card h3 {
     color: #e5e7eb; /* основной текст */
 }
+/* ===== FOOTER COPY ===== */
+.footer-copy {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+/* Тёмная тема */
+body.dark-theme .footer-copy {
+    color: #64748b;
+}
+
+
 
 
 
