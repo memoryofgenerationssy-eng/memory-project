@@ -99,6 +99,25 @@ section h2 {
     font-size: 2rem;
     margin-bottom: 15px;
 }
+/* ===== ПОДЗАГОЛОВКИ В ТЕКСТЕ ===== */
+
+section h3 {
+    font-size: 1.4rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #1e3a8a;
+    letter-spacing: 0.3px;
+}
+
+section h4 {
+    font-size: 1.15rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #1e40af;
+}
+
 
 section p {
     font-size: 1.05rem;
@@ -267,6 +286,16 @@ body.dark-theme section {
 
 body.dark-theme h1,
 body.dark-theme h2,
+/* ===== ПОДЗАГОЛОВКИ — ТЁМНАЯ ТЕМА ===== */
+
+body.dark-theme section h3 {
+    color: #93c5fd; /* светло-голубой */
+}
+
+body.dark-theme section h4 {
+    color: #bfdbfe;
+}
+
 body.dark-theme h3,
 body.dark-theme p,
 body.dark-theme li,
@@ -451,6 +480,7 @@ body.dark-theme .team-card p,
 body.dark-theme .team-card h3 {
     color: #e5e7eb; /* основной текст */
 }
+
 
 
 
