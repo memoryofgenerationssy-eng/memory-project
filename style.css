@@ -288,3 +288,69 @@ footer a {
     color: #93c5fd;
 }
 
+    /* =========================
+   ТЁМНАЯ ТЕМА — ТЕКСТ + ФОН
+   ========================= */
+
+body.dark-theme {
+    background: #0b1220;
+    color: #e5e7eb;
+}
+
+/* HEADER */
+body.dark-theme header {
+    background: linear-gradient(135deg, #020617, #020617);
+}
+
+/* НАВИГАЦИЯ */
+body.dark-theme nav a {
+    background: rgba(255,255,255,0.08);
+    color: #e5e7eb;
+}
+
+body.dark-theme nav a:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+/* СЕКЦИИ */
+body.dark-theme section {
+    background: #020617;
+}
+
+/* ВСЕ ТЕКСТЫ ВНУТРИ СЕКЦИЙ */
+body.dark-theme section h2,
+body.dark-theme section h3,
+body.dark-theme section p,
+body.dark-theme section li {
+    color: #e5e7eb;
+}
+
+/* НОВОСТИ */
+body.dark-theme .news-card {
+    background: #020617;
+}
+
+body.dark-theme .news-card h3 {
+    color: #93c5fd;
+}
+
+body.dark-theme .news-card p {
+    color: #cbd5e1;
+}
+
+/* КНОПКИ */
+body.dark-theme .button {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    color: #ffffff;
+}
+
+/* FOOTER */
+body.dark-theme footer {
+    background: #020617;
+    color: #94a3b8;
+}
+
+body.dark-theme footer a {
+    color: #93c5fd;
+}
+
