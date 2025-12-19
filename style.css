@@ -578,6 +578,24 @@ body.dark-theme .footer-copy {
   font-weight: bold;
   color: #333333;
 }
+.site-header {
+  background-color: #ffffff;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-size: 24px; /* Размер текста сайта */
+  font-weight: bold;
+  color: #333333;
+}
+
+.logo-emoji {
+  font-size: 32px;   /* Размер смайлика */
+  margin-right: 10px; /* Отступ между смайликом и текстом */
+}
+
 
 
 
