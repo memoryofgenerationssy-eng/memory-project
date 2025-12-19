@@ -1,48 +1,35 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Память Поколений — Волонтёрам</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<section class="page-center volunteer-section">
+    <h2>Стать волонтёром</h2>
+    <p>Если вы хотите присоединиться к нашей команде и помогать в проектах «Память Поколений», заполните форму ниже:</p>
 
-<header>
-    <div class="header-inner">
-        <h1 class="project-title">Память Поколений</h1>
-        <div class="header-right">
-            <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a>
-            <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a>
-            <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a>
-            <button id="theme-toggle" class="button">Тёмная тема</button>
-        </div>
+    <!-- Кнопка для открытия формы -->
+    <button id="volunteer-btn" class="form-button button">Заполнить форму</button>
+
+    <!-- Скрытая форма Google (iframe) -->
+    <div id="volunteer-form-container" class="volunteer-form-container" style="display:none; margin-top:20px;">
+        <iframe 
+            src="https://docs.google.com/forms/d/e/ВАШ_ID_FORM/viewform?embedded=true" 
+            width="100%" 
+            height="800" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Загружается…
+        </iframe>
     </div>
-    <nav class="main-nav">
-        <a href="index.html">Главная</a>
-        <a href="about.html">О проекте</a>
-        <a href="team.html">Команда</a>
-        <a href="volunteers.html">Волонтёрам</a>
-        <a href="videos.html">Видео</a>
-        <a href="contacts.html">Контакты</a>
-    </nav>
-</header>
+</section>
 
-<main>
-    <section class="page-center">
-        <h2>Волонтёрам</h2>
-        <div class="card">
-            <p>Если вы хотите стать частью нашего проекта и помогать сохранять истории, присоединяйтесь к нашей команде волонтёров. Мы открыты для идей, инициатив и активной помощи в создании видео, подкастов и офлайн-мероприятий.</p>
-        </div>
-    </section>
-</main>
+<script>
+    const volunteerBtn = document.getElementById('volunteer-btn');
+    const volunteerForm = document.getElementById('volunteer-form-container');
 
-<footer>
-    <a href="https://t.me/memory_of_generations">Telegram</a> |
-    <a href="https://vk.com/memoryofgenerations">ВКонтакте</a> |
-    <a href="https://www.youtube.com/@PP_PamyatPokoleniy">YouTube</a>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+    volunteerBtn.addEventListener('click', () => {
+        if (volunteerForm.style.display === 'none') {
+            volunteerForm.style.display = 'block';
+            volunteerBtn.textContent = 'Скрыть форму';
+        } else {
+            volunteerForm.style.display = 'none';
+            volunteerBtn.textContent = 'Заполнить форму';
+        }
+    });
+</script>
