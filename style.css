@@ -382,5 +382,47 @@ body.dark-theme .page-center p {
 body.dark-theme .news-card p {
     color: #cbd5e1 !important;
 }
+    /* ===============================
+   ПРИНУДИТЕЛЬНЫЙ ФИКС ТЕКСТА
+   ДЛЯ ТЁМНОЙ ТЕМЫ
+   =============================== */
 
+body.dark-theme {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+/* ОСНОВНОЙ ТЕКСТ */
+body.dark-theme p {
+    color: #e5e7eb !important;
+}
+
+/* ТЕКСТ В СЕКЦИЯХ */
+body.dark-theme section p {
+    color: #e5e7eb !important;
+}
+
+/* ТЕКСТ В MAIN */
+body.dark-theme main p {
+    color: #e5e7eb !important;
+}
+
+/* СПИСКИ */
+body.dark-theme li {
+    color: #e5e7eb !important;
+}
+
+/* КАРТОЧКИ */
+body.dark-theme section {
+    background: #020617;
+}
+
+/* НОВОСТИ */
+body.dark-theme .news-card {
+    background: #020617;
+}
+
+body.dark-theme .news-card p {
+    color: #e5e7eb !important;
+}
 
