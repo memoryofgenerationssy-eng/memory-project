@@ -234,4 +234,57 @@ footer a {
         padding: 8px 12px;
         font-size: 0.95rem;
     }
+/* ===== ТЁМНАЯ ТЕМА — КОНТЕНТ ===== */
+.dark-theme body {
+    background: #0f172a;
+    color: #e5e7eb;
 }
+
+/* Секции */
+.dark-theme section {
+    background: #1f2937;
+    color: #e5e7eb;
+}
+
+.dark-theme section h2 {
+    color: #f9fafb;
+}
+
+.dark-theme section p {
+    color: #d1d5db;
+}
+
+/* Карточки новостей */
+.dark-theme .news-card {
+    background: #111827;
+}
+
+.dark-theme .news-card h3 {
+    color: #93c5fd;
+}
+
+.dark-theme .news-card p {
+    color: #d1d5db;
+}
+
+/* Кнопки */
+.dark-theme .button {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    color: #f9fafb;
+}
+
+/* Навигация */
+.dark-theme nav a {
+    color: #e5e7eb;
+}
+
+/* Footer */
+.dark-theme footer {
+    background: #020617;
+    color: #9ca3af;
+}
+
+.dark-theme footer a {
+    color: #93c5fd;
+}
+
