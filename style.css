@@ -433,6 +433,26 @@ body.dark-theme .news-card p {
     text-align: center;
     line-height: 1.6;
 }
+/* ==========================
+   ТЁМНАЯ ТЕМА — КАРТОЧКИ КОМАНДЫ
+   ========================== */
+body.dark-theme .team-card {
+    background: #1f2937; /* тёмный фон карточки */
+    color: #e5e7eb;      /* светлый текст */
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3); /* лёгкая светлая тень для объёма */
+}
+
+/* Фото и текст внутри карточки */
+body.dark-theme .team-card .role {
+    color: #60a5fa; /* голубой для роли */
+}
+
+body.dark-theme .team-card p,
+body.dark-theme .team-card h3 {
+    color: #e5e7eb; /* основной текст */
+}
+
+
 
 
 
