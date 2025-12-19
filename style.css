@@ -634,6 +634,17 @@ body.dark-theme .form-button {
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
     color: #f3f4f6;
 }
+/* Смайлик-переключатель темы */
+#theme-toggle {
+    all: unset; /* убираем все стандартные стили кнопки */
+    cursor: pointer; /* курсор указывает, что это кликаемый элемент */
+    font-size: 1.5rem; /* размер смайлика */
+    line-height: 1; 
+    margin-left: 10px; /* небольшое смещение от ссылок */
+    display: inline-block;
+}
+
+
 
 
 
