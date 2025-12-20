@@ -1,39 +1,31 @@
-// ===== Dark Theme Toggle =====
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Сохраняем тему
+// Устанавливаем сохранённую тему
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     body.classList.add(savedTheme);
+    themeToggle.textContent = savedTheme === 'dark-theme' ? '🌙' : '☀️';
+} else {
+    themeToggle.textContent = '☀️';
 }
 
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-theme');
     if (body.classList.contains('dark-theme')) {
         localStorage.setItem('theme', 'dark-theme');
+        themeToggle.textContent = '🌙';
     } else {
         localStorage.setItem('theme', '');
+        themeToggle.textContent = '☀️';
     }
 });
 
-// ===== Новости =====
+// Новости
 const news = [
-    {
-        title: 'Запуск проекта',
-        text: 'Проект «Память Поколений» начал свою работу 8 октября 2024 года.',
-        link: '#'
-    },
-    {
-        title: 'Первое интервью',
-        text: 'Мы провели первое интервью с участником проекта.',
-        link: '#'
-    },
-    {
-        title: 'Волонтёры подключаются',
-        text: 'Набираем команду волонтёров для проведения мероприятий.',
-        link: '#'
-    }
+    { title: 'Запуск проекта', text: 'Проект «Память Поколений» начал свою работу 8 октября 2024 года.', link: '#' },
+    { title: 'Первое интервью', text: 'Мы провели первое интервью с участником проекта.', link: '#' },
+    { title: 'Волонтёры подключаются', text: 'Набираем команду волонтёров для проведения мероприятий.', link: '#' }
 ];
 
 const newsContainer = document.getElementById('news-container');
