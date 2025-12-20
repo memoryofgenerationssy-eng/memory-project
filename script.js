@@ -1,4 +1,4 @@
-// Проверяем тему при загрузке
+// Восстанавливаем тему при загрузке
 if (localStorage.getItem('theme') === 'dark') {
     document.documentElement.classList.add('dark-theme');
     const themeButton = document.getElementById('theme-toggle');
