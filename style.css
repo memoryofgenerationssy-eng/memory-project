@@ -745,6 +745,14 @@ footer a:hover {
   display: block;  /* убираем лишние пробелы снизу */
   margin: 0 auto;  /* центрируем по горизонтали */
 }
+.memory-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
 
 
 
