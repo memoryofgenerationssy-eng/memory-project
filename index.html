@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Память Поколений</title>
+    <title>Память Поколений — Главная</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,74 +11,54 @@
 <!-- HEADER -->
 <header>
     <div class="header-inner">
-        <div class="logo-area">
-            <span class="logo-emoji">⌛</span>
-            <h1 class="project-title">Память Поколений</h1>
-        </div>
+        <!-- Название проекта -->
+        <h1 class="project-title">Память Поколений</h1>
+
+        <!-- Правая часть: соцсети + кнопка темы -->
         <div class="header-right">
-            <a href="#">Главная</a>
-            <a href="#">Новости</a>
-            <a href="#">Команда</a>
-            <button class="button" id="theme-toggle">🌓</button>
+            <a href="https://t.me/memory_of_generations" target="_blank">Telegram</a>
+            <a href="https://vk.com/memoryofgenerations" target="_blank">ВКонтакте</a>
+            <a href="https://www.youtube.com/@PP_PamyatPokoleniy" target="_blank">YouTube</a>
+            <button id="theme-toggle" class="button">Тёмная тема</button>
         </div>
     </div>
+
+    <!-- Навигация -->
+    <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О проекте</a>
+        <a href="team.html">Команда</a>
+        <a href="volunteers.html">Волонтёрам</a>
+        <a href="videos.html">Видео</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
 </header>
 
-<!-- NAVIGATION -->
-<nav class="main-nav">
-    <a href="#">О проекте</a>
-    <a href="#">Мероприятия</a>
-    <a href="#">Контакты</a>
-</nav>
-
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <main>
+    <!-- Блок о проекте -->
     <section class="page-center">
-        <h2>Добро пожаловать в проект!</h2>
-        <p>Мы собираем истории молодого поколения, чтобы сохранить память о значимых событиях и людях.</p>
-    </section>
-
-    <section class="news-container">
-        <div class="news-card">
-            <h3>Новость 1</h3>
-            <p>Краткое описание новости или события.</p>
-            <a href="#" class="button">Подробнее</a>
-        </div>
-        <div class="news-card">
-            <h3>Новость 2</h3>
-            <p>Краткое описание новости или события.</p>
-            <a href="#" class="button">Подробнее</a>
+        <h2>О проекте</h2>
+        <div class="card">
+            <p>Проект «Память Поколений» был создан Никитой Кулагиным 8 октября 2024 года. Мы сохраняем истории молодого поколения через видео, подкасты и офлайн-мероприятия. Основная цель проекта — формировать уважение к истории и ценности патриотизма среди молодёжи.</p>
         </div>
     </section>
 
-    <section class="team-container">
-        <div class="team-card">
-            <img src="team1.jpg" alt="Имя" class="team-photo">
-            <h3>Никита Кулагин</h3>
-            <p class="role">Лидер проекта</p>
-        </div>
-        <div class="team-card">
-            <img src="team2.jpg" alt="Имя" class="team-photo">
-            <h3>Иван Иванов</h3>
-            <p class="role">Технический специалист</p>
-        </div>
+    <!-- Новости -->
+    <section class="page-center">
+        <h2>Новости</h2>
+        <div id="news-container" class="news-container"></div>
     </section>
 </main>
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-inner">
-        <p>© 2025 Память Поколений. Все права защищены.</p>
-        <p class="footer-copy">Разработано командой проекта</p>
-    </div>
+    <a href="https://t.me/memory_of_generations">Telegram</a> |
+    <a href="https://vk.com/memoryofgenerations">ВКонтакте</a> |
+    <a href="https://www.youtube.com/@PP_PamyatPokoleniy">YouTube</a>
 </footer>
 
-<script>
-    const toggle = document.getElementById('theme-toggle');
-    toggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-    });
-</script>
-
+<!-- Подключаем JS -->
+<script src="script.js"></script>
 </body>
 </html>
