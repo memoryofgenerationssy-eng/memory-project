@@ -1,49 +1,60 @@
-// Получаем кнопку и body
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+// script.js
 
-// Функция переключения темы
-function toggleTheme() {
-    body.classList.toggle('dark-theme');
-    updateEmoji();
-    // Сохраняем состояние в localStorage
-    localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark' : 'light');
-}
-
-// Функция обновления смайлика на кнопке
-function updateEmoji() {
-    if(body.classList.contains('dark-theme')) {
-        themeToggle.textContent = '☀️'; // солнце для темной темы
-    } else {
-        themeToggle.textContent = '🌙'; // луна для светлой темы
-    }
-}
-
-// Вешаем обработчик на кнопку
-if(themeToggle) {
-    themeToggle.addEventListener('click', toggleTheme);
-}
-
-// Проверяем сохранённую тему при загрузке
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if(savedTheme === 'dark') {
-        body.classList.add('dark-theme');
-    } else {
-        body.classList.remove('dark-theme');
-    }
-    updateEmoji();
-}
+// ===== Новости =====
 const newsContainer = document.getElementById('news-container');
+
+// Пример массива новостей
 const newsData = [
-    {title: "Новость 1", text: "Текст новости 1"},
-    {title: "Новость 2", text: "Текст новости 2"}
+    {
+        title: "Проект стартовал!",
+        text: "Проект «Память Поколений» начал свою деятельность 8 октября 2024 года. Следите за обновлениями и новыми историями молодого поколения."
+    },
+    {
+        title: "Первое видео",
+        text: "Мы опубликовали первое видео-интервью с участником проекта. Посмотрите его на нашем YouTube-канале."
+    },
+    {
+        title: "Офлайн-мероприятие",
+        text: "В ближайшее время планируется встреча с волонтёрами и участниками проекта в Казанской семинарии."
+    }
 ];
 
-newsData.forEach(item => {
+// Функция создания карточки новости
+function createNewsCard(newsItem) {
     const card = document.createElement('div');
     card.className = 'news-card';
-    card.innerHTML = `<h3>${item.title}</h3><p>${item.text}</p>`;
+    card.innerHTML = `
+        <h3>${newsItem.title}</h3>
+        <p>${newsItem.text}</p>
+    `;
+    return card;
+}
+
+// Заполняем контейнер новостями
+newsData.forEach(item => {
+    const card = createNewsCard(item);
     newsContainer.appendChild(card);
 });
 
+// ===== ТЁМНАЯ ТЕМА =====
+const themeToggle = document.getElementById('theme-toggle');
+
+// Изначальный смайлик на кнопке темы
+let darkTheme = false;
+
+themeToggle.addEventListener('click', () => {
+    darkTheme = !darkTheme;
+    document.body.classList.toggle('dark-theme', darkTheme);
+
+    // Сменяем смайлик на кнопке
+    if (darkTheme) {
+        themeToggle.textContent = "🌙"; // Луна
+    } else {
+        themeToggle.textContent = "☀️"; // Солнце
+    }
+});
+
+// ===== Инициализация кнопки темы при загрузке =====
+window.addEventListener('DOMContentLoaded', () => {
+    themeToggle.textContent = "☀️"; // Солнце по умолчанию
+});
