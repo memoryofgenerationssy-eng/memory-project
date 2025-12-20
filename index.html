@@ -8,20 +8,11 @@
 </head>
 <body>
 
-<!-- ==========================
-     HEADER
-========================== -->
+<!-- HEADER -->
 <header>
     <div class="header-inner">
         <div class="logo-area">
-            <div class="hourglass">
-                <!-- SVG песочные часы -->
-                <svg viewBox="0 0 64 96" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="28" y="0" width="8" height="96" fill="#fff"/>
-                    <polygon points="0,0 64,0 32,48" fill="#fff"/>
-                    <polygon points="0,96 64,96 32,48" fill="#fff"/>
-                </svg>
-            </div>
+            <span class="logo-emoji">⌛</span>
             <h1 class="project-title">Память Поколений</h1>
         </div>
         <div class="header-right">
@@ -33,18 +24,14 @@
     </div>
 </header>
 
-<!-- ==========================
-     NAVIGATION
-========================== -->
+<!-- NAVIGATION -->
 <nav class="main-nav">
     <a href="#">О проекте</a>
     <a href="#">Мероприятия</a>
     <a href="#">Контакты</a>
 </nav>
 
-<!-- ==========================
-     MAIN CONTENT
-========================== -->
+<!-- MAIN CONTENT -->
 <main>
     <section class="page-center">
         <h2>Добро пожаловать в проект!</h2>
@@ -76,20 +63,9 @@
             <p class="role">Технический специалист</p>
         </div>
     </section>
-
-    <section class="map-container">
-        <h2>Карта памяти</h2>
-        <div class="memory-map">
-            <svg id="map" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="250" cy="250" r="200" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="2"/>
-            </svg>
-        </div>
-    </section>
 </main>
 
-<!-- ==========================
-     FOOTER
-========================== -->
+<!-- FOOTER -->
 <footer>
     <div class="footer-inner">
         <p>© 2025 Память Поколений. Все права защищены.</p>
@@ -98,7 +74,6 @@
 </footer>
 
 <script>
-    // Переключение тёмной темы
     const toggle = document.getElementById('theme-toggle');
     toggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
