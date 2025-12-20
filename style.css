@@ -276,3 +276,111 @@ body.dark-theme footer a {
     transform: translateY(-2px);
     box-shadow: 0 12px 25px rgba(37,99,235,0.45);
 }
+/* Фотографии команды */
+.team-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .team-photo {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* Кнопка переключения темы */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: inherit;
+    padding: 0;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Темная тема — body */
+body {
+    background: #f6f7f9;
+    color: #1f2937;
+    transition: background 0.3s, color 0.3s;
+}
+
+html.dark-theme body {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+/* Новости */
+.news-card {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+    position: relative;
+}
+
+.news-card h3 {
+    margin: 0 0 10px;
+}
+
+.news-card p {
+    margin-bottom: 10px;
+}
+
+/* Кнопка "Подробнее" под новостью */
+.news-card .button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.35);
+}
+
+/* Навигация с эффектом обводки */
+.main-nav a {
+    position: relative;
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #0077ff;
+    transition: width 0.3s;
+}
+
+.main-nav a:hover {
+    color: #0077ff;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
