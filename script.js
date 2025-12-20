@@ -1,39 +1,43 @@
-// Восстанавливаем тему при загрузке
-if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.classList.add('dark-theme');
-    const themeButton = document.getElementById('theme-toggle');
-    if (themeButton) themeButton.textContent = '☀️';
+// ===== ТЁМНАЯ ТЕМА =====
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Проверка сохранённой темы
+if(localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-theme');
+    themeToggle.textContent = '🌙';
+} else {
+    themeToggle.textContent = '🌞';
 }
 
 // Переключение темы
-document.getElementById('theme-toggle').addEventListener('click', () => {
-    const html = document.documentElement;
-    const themeButton = document.getElementById('theme-toggle');
-
-    if (html.classList.contains('dark-theme')) {
-        html.classList.remove('dark-theme');
-        localStorage.setItem('theme', 'light');
-        themeButton.textContent = '🌙';
-    } else {
-        html.classList.add('dark-theme');
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    if(body.classList.contains('dark-theme')){
         localStorage.setItem('theme', 'dark');
-        themeButton.textContent = '☀️';
+        themeToggle.textContent = '🌙';
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌞';
     }
 });
 
-// Новости
+// ===== НОВОСТИ =====
 const news = [
     {
-        title: "Проект запущен",
-        content: "Проект «Память Поколений» официально стартовал 8 октября 2024 года."
+        title: "Запуск проекта",
+        text: "Проект «Память Поколений» официально запущен 8 октября 2024 года.",
+        link: "#"
     },
     {
         title: "Первое видео",
-        content: "Опубликовано первое видео с историей молодого поколения."
+        text: "Первое видео-интервью уже доступно на нашем YouTube-канале.",
+        link: "#"
     },
     {
-        title: "Новый подкаст",
-        content: "Запущен подкаст проекта о сохранении памятных историй молодежи."
+        title: "Подкаст стартует",
+        text: "Запуск подкаста «Память Поколений» для сохранения историй молодого поколения.",
+        link: "#"
     }
 ];
 
@@ -41,11 +45,11 @@ const newsContainer = document.getElementById('news-container');
 
 news.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'news-card';
+    card.classList.add('news-card');
     card.innerHTML = `
         <h3>${item.title}</h3>
-        <p>${item.content}</p>
-        <a href="#" class="button">Подробнее</a>
+        <p>${item.text}</p>
+        <a href="${item.link}" class="button">Подробнее</a>
     `;
     newsContainer.appendChild(card);
 });
