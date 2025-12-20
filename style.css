@@ -226,3 +226,48 @@ html.dark-theme .news-card .button {
 * {
     transition: all 0.3s ease;
 }
+/* ===== HEADER ===== */
+header {
+    width: 100%;
+    background: #ffffff; /* светлая тема */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s, border-bottom 0.3s;
+}
+
+/* ===== HEADER DARK THEME ===== */
+body.dark-theme header {
+    background: #020617; /* цвет фона темной темы */
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* тонкая граница для разделения */
+    box-shadow: none; /* тень не нужна */
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #111;      /* можно оставить темный */
+    color: #eee;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+body.dark-theme footer {
+    background: #020617; /* совпадает с основным фоном */
+    color: #cbd5e1;      /* светлый текст */
+}
+
+/* ===== HEADER LINKS ===== */
+header .header-right a,
+header .main-nav a {
+    color: #333; /* светлая тема */
+}
+
+body.dark-theme header .header-right a,
+body.dark-theme header .main-nav a {
+    color: #e5e7eb; /* тёмная тема */
+}
+
+
