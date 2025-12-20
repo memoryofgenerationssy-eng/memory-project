@@ -170,15 +170,21 @@ main {
 
 /* ===== FOOTER ===== */
 footer {
-    background: #0f172a;
-    color: #cbd5f5;
+    background: #0f172a; /* тёмный фон, без голубого */
+    color: #cbd5f5;      /* цвет текста */
     text-align: center;
     padding: 30px 20px;
 }
 
 footer a {
-    color: #93c5fd;
+    color: #93c5fd;      /* ссылки в футере */
     font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ff6b6b;      /* акцент при наведении */
 }
 
 .footer-copy {
@@ -248,3 +254,4 @@ body.dark-theme .news-card .button {
 body.dark-theme #theme-toggle {
     color: #fff;
 }
+
