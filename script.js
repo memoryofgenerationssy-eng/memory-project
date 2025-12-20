@@ -33,4 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.remove('dark-theme');
     }
     updateEmoji();
+}
+const newsContainer = document.getElementById('news-container');
+const newsData = [
+    {title: "Новость 1", text: "Текст новости 1"},
+    {title: "Новость 2", text: "Текст новости 2"}
+];
+
+newsData.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    card.innerHTML = `<h3>${item.title}</h3><p>${item.text}</p>`;
+    newsContainer.appendChild(card);
 });
+
