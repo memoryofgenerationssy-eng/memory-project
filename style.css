@@ -269,5 +269,64 @@ body.dark-theme header .header-right a,
 body.dark-theme header .main-nav a {
     color: #e5e7eb; /* тёмная тема */
 }
+/* ===== ОБНОВЛЁННАЯ ШАПКА И ФУТЕР ===== */
+
+/* --- HEADER --- */
+header {
+    background: #ffffff; /* светлая тема */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.3s, border-bottom 0.3s;
+}
+
+body.dark-theme header {
+    background: #020617; /* основной фон для темной темы */
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* тонкая граница */
+    box-shadow: none;
+}
+
+/* --- HEADER LINKS --- */
+header .header-right a,
+header .main-nav a {
+    color: #333; /* светлая тема */
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+body.dark-theme header .header-right a,
+body.dark-theme header .main-nav a {
+    color: #e5e7eb; /* тёмная тема */
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #ffffff; /* светлая тема */
+    color: #222;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-theme footer {
+    background: #020617; /* совпадает с основным фоном */
+    color: #cbd5e1;      /* светлый текст */
+}
+
+/* --- Ссылки в футере --- */
+footer a {
+    color: #0077ff; /* светлая тема */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+body.dark-theme footer a {
+    color: #60a5fa; /* светло-голубой для темной темы */
+}
+
+/* --- Убираем любые фоны, которые могли быть ранее --- */
+header, footer, body {
+    background-image: none !important;
+}
+
 
 
