@@ -282,4 +282,29 @@ section:hover, .card:hover, .news-card:hover, .team-card:hover {
         gap: 10px;
         margin-top: 15px;
     }
+    /* ===== DARK THEME CORRECTIONS ===== */
+body.dark-theme p,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6,
+body.dark-theme a,
+body.dark-theme span,
+body.dark-theme li {
+    color: #e5e7eb; /* светлый текст */
 }
+
+/* Ссылки в новостных и командных карточках */
+body.dark-theme .news-card a,
+body.dark-theme .team-card a {
+    color: #93c5fd;
+}
+
+body.dark-theme .news-card a:hover,
+body.dark-theme .team-card a:hover {
+    color: #60a5fa;
+}
+
+
