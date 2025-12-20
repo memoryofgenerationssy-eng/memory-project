@@ -1,67 +1,51 @@
-// ====== ТЁМНАЯ ТЕМА ======
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
+// Проверяем тему при загрузке
 if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-theme');
-    themeToggle.textContent = '🌙 Тёмная тема';
-} else {
-    body.classList.remove('dark-theme');
-    themeToggle.textContent = '☀️ Светлая тема';
+    document.documentElement.classList.add('dark-theme');
+    const themeButton = document.getElementById('theme-toggle');
+    if (themeButton) themeButton.textContent = '☀️';
 }
 
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-theme');
+// Переключение темы
+document.getElementById('theme-toggle').addEventListener('click', () => {
+    const html = document.documentElement;
+    const themeButton = document.getElementById('theme-toggle');
 
-    if (body.classList.contains('dark-theme')) {
-        localStorage.setItem('theme', 'dark');
-        themeToggle.textContent = '🌙 Тёмная тема';
-    } else {
+    if (html.classList.contains('dark-theme')) {
+        html.classList.remove('dark-theme');
         localStorage.setItem('theme', 'light');
-        themeToggle.textContent = '☀️ Светлая тема';
+        themeButton.textContent = '🌙';
+    } else {
+        html.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+        themeButton.textContent = '☀️';
     }
 });
 
-// ====== НОВОСТИ НА ГЛАВНОЙ ======
+// Новости
+const news = [
+    {
+        title: "Проект запущен",
+        content: "Проект «Память Поколений» официально стартовал 8 октября 2024 года."
+    },
+    {
+        title: "Первое видео",
+        content: "Опубликовано первое видео с историей молодого поколения."
+    },
+    {
+        title: "Новый подкаст",
+        content: "Запущен подкаст проекта о сохранении памятных историй молодежи."
+    }
+];
+
 const newsContainer = document.getElementById('news-container');
 
-if (newsContainer) {
-    const newsItems = [
-        {
-            title: 'Проект запущен!',
-            text: 'Мы начали работу над проектом «Память Поколений». Следите за обновлениями и участвуйте в наших мероприятиях.',
-            link: '#'
-        },
-        {
-            title: 'Первое интервью',
-            text: 'Опубликовано первое интервью с участником проекта. Оно доступно на YouTube и нашем сайте.',
-            link: '#'
-        },
-        {
-            title: 'Новый волонтёрский пункт',
-            text: 'Мы открываем новый пункт проекта в Уруссу. Присоединяйтесь к команде!',
-            link: '#'
-        }
-    ];
-
-    newsItems.forEach(item => {
-        const newsCard = document.createElement('div');
-        newsCard.classList.add('news-card');
-
-        const newsTitle = document.createElement('h3');
-        newsTitle.textContent = item.title;
-
-        const newsText = document.createElement('p');
-        newsText.textContent = item.text;
-
-        const moreButton = document.createElement('a');
-        moreButton.classList.add('button');
-        moreButton.textContent = 'Подробнее';
-        moreButton.href = item.link;
-
-        newsCard.appendChild(newsTitle);
-        newsCard.appendChild(newsText);
-        newsCard.appendChild(moreButton);
-        newsContainer.appendChild(newsCard);
-    });
-}
+news.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p>${item.content}</p>
+        <a href="#" class="button">Подробнее</a>
+    `;
+    newsContainer.appendChild(card);
+});
