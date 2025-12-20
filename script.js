@@ -1,60 +1,63 @@
 // script.js
 
-// ===== Новости =====
-const newsContainer = document.getElementById('news-container');
+// ====== ТЁМНАЯ ТЕМА ======
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-// Пример массива новостей
-const newsData = [
-    {
-        title: "Проект стартовал!",
-        text: "Проект «Память Поколений» начал свою деятельность 8 октября 2024 года. Следите за обновлениями и новыми историями молодого поколения."
-    },
-    {
-        title: "Первое видео",
-        text: "Мы опубликовали первое видео-интервью с участником проекта. Посмотрите его на нашем YouTube-канале."
-    },
-    {
-        title: "Офлайн-мероприятие",
-        text: "В ближайшее время планируется встреча с волонтёрами и участниками проекта в Казанской семинарии."
-    }
-];
-
-// Функция создания карточки новости
-function createNewsCard(newsItem) {
-    const card = document.createElement('div');
-    card.className = 'news-card';
-    card.innerHTML = `
-        <h3>${newsItem.title}</h3>
-        <p>${newsItem.text}</p>
-    `;
-    return card;
+// Проверяем localStorage и устанавливаем тему при загрузке страницы
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-theme');
+    themeToggle.textContent = '🌙 Тёмная тема';
+} else {
+    body.classList.remove('dark-theme');
+    themeToggle.textContent = '☀️ Светлая тема';
 }
 
-// Заполняем контейнер новостями
-newsData.forEach(item => {
-    const card = createNewsCard(item);
-    newsContainer.appendChild(card);
-});
-
-// ===== ТЁМНАЯ ТЕМА =====
-const themeToggle = document.getElementById('theme-toggle');
-
-// Изначальный смайлик на кнопке темы
-let darkTheme = false;
-
+// Переключение темы
 themeToggle.addEventListener('click', () => {
-    darkTheme = !darkTheme;
-    document.body.classList.toggle('dark-theme', darkTheme);
+    body.classList.toggle('dark-theme');
 
-    // Сменяем смайлик на кнопке
-    if (darkTheme) {
-        themeToggle.textContent = "🌙"; // Луна
+    if (body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '🌙 Тёмная тема';
     } else {
-        themeToggle.textContent = "☀️"; // Солнце
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '☀️ Светлая тема';
     }
 });
 
-// ===== Инициализация кнопки темы при загрузке =====
-window.addEventListener('DOMContentLoaded', () => {
-    themeToggle.textContent = "☀️"; // Солнце по умолчанию
-});
+
+// ====== НОВОСТИ НА ГЛАВНОЙ ======
+const newsContainer = document.getElementById('news-container');
+
+if (newsContainer) {
+    const newsItems = [
+        {
+            title: 'Проект запущен!',
+            text: 'Мы начали работу над проектом «Память Поколений». Следите за обновлениями и участвуйте в наших мероприятиях.'
+        },
+        {
+            title: 'Первое интервью',
+            text: 'Опубликовано первое интервью с участником проекта. Оно доступно на YouTube и нашем сайте.'
+        },
+        {
+            title: 'Новый волонтёрский пункт',
+            text: 'Мы открываем новый пункт проекта в Уруссу. Присоединяйтесь к команде!'
+        }
+    ];
+
+    newsItems.forEach(item => {
+        const newsCard = document.createElement('div');
+        newsCard.classList.add('news-card');
+
+        const newsTitle = document.createElement('h3');
+        newsTitle.textContent = item.title;
+
+        const newsText = document.createElement('p');
+        newsText.textContent = item.text;
+
+        newsCard.appendChild(newsTitle);
+        newsCard.appendChild(newsText);
+        newsContainer.appendChild(newsCard);
+    });
+}
