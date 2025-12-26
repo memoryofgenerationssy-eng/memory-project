@@ -1,3 +1,4 @@
+// ===== ПЕРЕКЛЮЧЕНИЕ ТЕМЫ =====
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
@@ -10,6 +11,7 @@ if (savedTheme) {
     themeToggle.textContent = '☀️';
 }
 
+// Клик по кнопке темы
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-theme');
     if (body.classList.contains('dark-theme')) {
@@ -21,11 +23,46 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// Новости
+// ===== АНИМАЦИЯ ПРИ ЗАГРУЗКЕ =====
+window.addEventListener('load', () => {
+    // Плавное появление всего тела страницы
+    body.classList.add('loaded');
+
+    // Появление секций с задержкой
+    const sections = document.querySelectorAll('section');
+    sections.forEach((sec, i) => {
+        setTimeout(() => {
+            sec.classList.add('visible');
+        }, i * 150);
+    });
+
+    // Появление кнопок
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach((btn, i) => {
+        setTimeout(() => {
+            btn.style.opacity = '1';
+            btn.style.transform = 'translateY(0)';
+        }, 300 + i * 100);
+    });
+});
+
+// ===== ГЕНЕРАЦИЯ НОВОСТЕЙ =====
 const news = [
-    { title: 'Интервью с семьями', text: 'Проект «Память поколений» ищет семью, с которой мы запишем новое интервью — о корнях, традициях, памяти и любви.', link: 'https://vk.com/wall-227763139_120' },
-    { title: 'Презентация проекта', text: 'В стенах Казанской православной духовной семинарии, в рамках XXIV Всероссийской научно-богословской конференции, состоялась презентация нашего проекта.', link: 'https://vk.com/wall-227763139_113' },
-    { title: 'День рождения проекта', text: 'Набираем команду волонтёров для проведения мероприятий.', link: 'https://vk.com/wall-227763139_106' }
+    {
+        title: 'Интервью с семьями',
+        text: 'Проект «Память поколений» ищет семью, с которой мы запишем новое интервью — о корнях, традициях, памяти и любви.',
+        link: 'https://vk.com/wall-227763139_120'
+    },
+    {
+        title: 'Презентация проекта',
+        text: 'В стенах Казанской православной духовной семинарии, в рамках XXIV Всероссийской научно-богословской конференции, состоялась презентация нашего проекта.',
+        link: 'https://vk.com/wall-227763139_113'
+    },
+    {
+        title: 'День рождения проекта',
+        text: 'Набираем команду волонтёров для проведения мероприятий.',
+        link: 'https://vk.com/wall-227763139_106'
+    }
 ];
 
 const newsContainer = document.getElementById('news-container');
