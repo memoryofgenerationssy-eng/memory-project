@@ -1,12 +1,53 @@
-/* ===== Общие стили ===== */
-body {
-    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    background: #f6f7f9;
-    color: #1f2937;
+/* ===== CSS VARIABLES ===== */
+:root {
+    --bg-main: #f6f7f9;
+    --bg-card: #ffffff;
+    --bg-header: #ffffff;
+
+    --text-main: #1f2937;
+    --text-muted: #374151;
+    --text-heading: #1f2937;
+
+    --accent: #2563eb;
+    --accent-light: rgba(37, 99, 235, 0.1);
+
+    --shadow-soft: 0 5px 15px rgba(0,0,0,0.08);
+    --shadow-medium: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-/* ===== Интро ===== */
+/* ===== DARK THEME VARIABLES ===== */
+body.dark-theme {
+    --bg-main: #121212;
+    --bg-card: #1f1f1f;
+    --bg-header: #121212;
+
+    --text-main: #e5e7eb;
+    --text-muted: #d1d5db;
+    --text-heading: #f3f4f6;
+
+    --accent: #93c5fd;
+    --accent-light: rgba(255,255,255,0.08);
+
+    --shadow-soft: 0 10px 25px rgba(0,0,0,0.5);
+    --shadow-medium: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== INTRO ===== */
 #intro {
     position: fixed;
     top: 0;
@@ -18,7 +59,6 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    pointer-events: all;
     opacity: 1;
     transition: opacity 1s ease;
 }
@@ -51,10 +91,13 @@ body {
 /* ===== HEADER ===== */
 header {
     width: 100%;
-    background: #ffffff;
+    background: var(--bg-header);
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    box-shadow: var(--shadow-soft);
     padding: 20px 40px;
+    z-index: 1;
+    position: relative;
 }
 
 .header-inner {
@@ -67,8 +110,42 @@ header {
     font-size: 28px;
 }
 
-.header-right a, .header-right button {
-    margin-left: 15px;
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-right a:hover {
+    color: var(--accent);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ===== NAV ===== */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.main-nav a {
+    padding: 10px 25px;
+    border-radius: 50px;
+    background: var(--accent-light);
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.main-nav a:hover {
+    background: rgba(37,99,235,0.3);
+    transform: scale(1.05);
 }
 
 /* ===== MAIN ===== */
@@ -79,17 +156,29 @@ main {
 }
 
 section {
-    background: #ffffff;
+    background: var(--bg-card);
     border-radius: 20px;
     padding: 40px;
     margin-bottom: 50px;
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.2s;
+}
+
+section:hover {
+    transform: translateY(-4px);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 /* ===== CARD ===== */
 .card {
-    background: #fefefe;
+    background: var(--bg-card);
     padding: 20px;
     border-radius: 15px;
+    box-shadow: var(--shadow-soft);
 }
 
 /* ===== NEWS ===== */
@@ -99,13 +188,59 @@ section {
     gap: 25px;
 }
 
+.news-card {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.news-card p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #fff;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.45);
+    filter: brightness(1.08);
+}
+
+.button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+    filter: brightness(0.95);
+}
+
 /* ===== FOOTER ===== */
 footer {
-    background: #111;
-    color: #ccc;
+    background: var(--bg-header);
+    color: var(--text-muted);
     text-align: center;
     padding: 40px 20px;
 }
+
 footer a {
-    color: #00aaff;
+    color: var(--accent);
 }
