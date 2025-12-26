@@ -1,4 +1,4 @@
-// ===== Тема =====
+// ===== ТЕМА =====
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
@@ -21,7 +21,7 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// ===== Новости =====
+// ===== НОВОСТИ =====
 const news = [
     { title: 'Интервью с семьями', text: 'Проект «Память поколений» ищет семью, с которой мы запишем новое интервью — о корнях, традициях, памяти и любви.', link: 'https://vk.com/wall-227763139_120' },
     { title: 'Презентация проекта', text: 'В стенах Казанской православной духовной семинарии, в рамках XXIV Всероссийской научно-богословской конференции, состоялась презентация нашего проекта.', link: 'https://vk.com/wall-227763139_113' },
@@ -51,16 +51,16 @@ news.forEach(item => {
     newsContainer.appendChild(card);
 });
 
-// ===== Интро =====
+// ===== ИНТРО =====
 window.addEventListener('load', () => {
     const intro = document.getElementById('intro');
-    // Показываем интро 2.5 секунды, затем скрываем
+
+    // Скрываем интро через 3 секунды (совпадает с анимацией)
     setTimeout(() => {
         intro.style.opacity = '0';
         intro.style.pointerEvents = 'none';
-        // Полностью удаляем из DOM через 1s (совпадает с transition)
         setTimeout(() => {
             intro.style.display = 'none';
         }, 1000);
-    }, 2500);
+    }, 3000);
 });
