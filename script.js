@@ -61,3 +61,12 @@ window.addEventListener('load', () => {
     const teamCards = document.querySelectorAll('.team-card');
     teamCards.forEach((card, i) => setTimeout(()=> card.classList.add('visible'), 1100 + i*100));
 });
+// Анимация при заходе на сайт
+window.addEventListener('load', () => {
+    const intro = document.getElementById('intro-animation');
+    setTimeout(() => {
+        intro.style.opacity = '0';
+        setTimeout(() => intro.style.display = 'none', 1000); // скрываем после исчезновения
+    }, 2500); // держим 2.5 секунды
+});
+
