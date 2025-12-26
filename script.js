@@ -68,3 +68,32 @@ news.forEach(item=>{
 
     newsContainer.appendChild(card);
 });
+window.addEventListener('load', () => {
+    // BODY
+    body.classList.add('loaded');
+
+    // HEADER
+    const header = document.querySelector('header');
+    setTimeout(()=> header.classList.add('visible'), 200);
+
+    // NAV LINKS
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach((link, i) => {
+        setTimeout(() => link.classList.add('visible'), 400 + i*100);
+    });
+
+    // SECTIONS
+    const sections = document.querySelectorAll('section');
+    sections.forEach((sec, i) => {
+        setTimeout(()=>sec.classList.add('visible'), 600 + i*150);
+    });
+
+    // BUTTONS
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach((btn, i) => {
+        setTimeout(()=>{
+            btn.style.opacity='1';
+            btn.style.transform='translateY(0)';
+        }, 900 + i*100);
+    });
+});
