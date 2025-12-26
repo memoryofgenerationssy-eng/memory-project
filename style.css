@@ -1,6 +1,4 @@
-/* ==============================
-   CSS VARIABLES
-============================== */
+/* ===== CSS VARIABLES ===== */
 :root {
     --bg-main: #f6f7f9;
     --bg-card: #ffffff;
@@ -16,16 +14,13 @@
     --shadow-soft: 0 5px 15px rgba(0,0,0,0.08);
     --shadow-medium: 0 10px 25px rgba(0,0,0,0.12);
 
-    /* Buttons */
-    --btn-bg: linear-gradient(135deg, #2563eb, #1e40af);
-    --btn-bg-hover: linear-gradient(135deg, #1e40af, #1e3a8a);
+    --btn-bg: #2563eb;
+    --btn-bg-hover: #1e40af;
     --btn-text: #ffffff;
-    --btn-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    --btn-shadow: rgba(0,0,0,0.2);
 }
 
-/* ==============================
-   DARK THEME
-============================== */
+/* DARK THEME */
 body.dark-theme {
     --bg-main: #121212;
     --bg-card: #1f1f1f;
@@ -41,339 +36,119 @@ body.dark-theme {
     --shadow-soft: 0 10px 25px rgba(0,0,0,0.5);
     --shadow-medium: 0 15px 35px rgba(0,0,0,0.6);
 
-    --btn-bg: linear-gradient(135deg, #60a5fa, #3b82f6);
-    --btn-bg-hover: linear-gradient(135deg, #3b82f6, #2563eb);
-    --btn-shadow: 0 10px 30px rgba(147, 197, 253, 0.4);
+    --btn-bg: #3b82f6;
+    --btn-bg-hover: #2563eb;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(0,0,0,0.4);
 }
 
-/* ==============================
-   RESET
-============================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* RESET */
+* { box-sizing: border-box; margin:0; padding:0; }
 
-/* ==============================
-   BASE
-============================== */
+/* BASE */
 body {
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     background: var(--bg-main);
     color: var(--text-main);
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+body.loaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+a { text-decoration: none; color: inherit; transition: color 0.3s; }
 
-/* ==============================
-   TYPOGRAPHY
-============================== */
-h1, h2, h3, h4, h5, h6 {
+h1,h2,h3,h4,h5,h6 {
     color: var(--text-heading);
     font-weight: 700;
-    line-height: 1.25;
 }
 
-/* ==============================
-   HEADER
-============================== */
+/* HEADER */
 header {
+    width: 100%;
     background: var(--bg-header);
-    padding: 20px 40px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     box-shadow: var(--shadow-soft);
+    padding: 20px 40px;
+    transition: background 0.3s, color 0.3s;
 }
 
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+.project-title { font-size:28px; }
+.header-right { display:flex; align-items:center; gap:15px; }
+.header-right a:hover { color: var(--accent); }
 
-.project-title {
-    font-size: 28px;
-}
+#theme-toggle { background:none; border:none; font-size:28px; cursor:pointer; }
 
-.header-right {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.header-right a:hover {
-    color: var(--accent);
-}
-
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-/* ==============================
-   NAVIGATION
-============================== */
+/* NAV */
 .main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    display:flex; justify-content:center; gap:15px; margin-top:20px;
 }
-
 .main-nav a {
-    padding: 10px 25px;
-    border-radius: 50px;
-    background: var(--accent-light);
-    font-weight: 500;
-    transition: transform 0.2s, background 0.3s;
+    padding:10px 25px; border-radius:50px; background:var(--accent-light); font-weight:500; transition: all 0.3s;
 }
+.main-nav a:hover { background: rgba(37,99,235,0.3); transform: scale(1.05); }
 
-.main-nav a:hover {
-    background: rgba(37,99,235,0.3);
-    transform: scale(1.05);
-}
-
-/* ==============================
-   MAIN
-============================== */
-main {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
+/* MAIN */
+main { max-width:1100px; margin:60px auto; padding:0 20px; }
 section {
     background: var(--bg-card);
-    border-radius: 20px;
-    padding: 40px;
-    margin-bottom: 50px;
+    border-radius:20px;
+    padding:40px;
+    margin-bottom:50px;
     box-shadow: var(--shadow-medium);
-    transition: transform 0.2s;
-}
-
-section:hover {
-    transform: translateY(-4px);
-}
-
-/* ==============================
-   CARDS
-============================== */
-.card {
-    background: var(--bg-card);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-}
-
-/* ==============================
-   NEWS
-============================== */
-.news-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.news-card {
-    background: var(--bg-card);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.2s;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-}
-
-.news-card h3 {
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-
-.news-card p {
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
-
-/* ==============================
-   BUTTONS (ЕДИНАЯ СИСТЕМА)
-============================== */
-.button,
-a.button,
-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 22px;
-    border-radius: 999px;
-
-    background: var(--btn-bg);
-    color: var(--btn-text);
-
-    font-weight: 600;
-    font-size: 0.95rem;
-
-    border: none;
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.25s ease,
-        background 0.3s ease,
-        filter 0.2s ease;
-}
-
-.button:hover,
-a.button:hover,
-button:hover {
-    background: var(--btn-bg-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--btn-shadow);
-    filter: brightness(1.05);
-}
-
-.button:active,
-a.button:active,
-button:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    filter: brightness(0.95);
-}
-
-.button:focus-visible,
-a.button:focus-visible,
-button:focus-visible {
-    outline: none;
-    box-shadow:
-        0 0 0 3px rgba(37, 99, 235, 0.35),
-        var(--btn-shadow);
-}
-
-/* ==============================
-   TEAM
-============================== */
-.team-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-}
-
-.team-card {
-    background: var(--bg-card);
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.2s;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-}
-
-.team-card img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* ==============================
-   FOOTER
-============================== */
-footer {
-    background: var(--bg-header);
-    color: var(--text-muted);
-    text-align: center;
-    padding: 40px 20px;
-}
-
-footer a {
-    color: var(--accent);
-}
-
-/* ==============================
-   MEDIA
-============================== */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px;
-    }
-
-    .header-inner {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .main-nav {
-        flex-wrap: wrap;
-    }
-
-    .news-container,
-    .team-container {
-        grid-template-columns: 1fr;
-    }
-   /* ===== FADE-IN ВСЕГО КОНТЕНТА ===== */
-body {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-body.loaded {
-    opacity: 1;
-}
-
-/* ===== ANIMATION FOR SECTIONS ===== */
-section {
+    transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+section.visible { opacity:1; transform: translateY(0); }
+section h2 { font-size:2rem; margin-bottom:20px; }
 
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* CARD */
+.card { background: var(--bg-card); padding:20px; border-radius:15px; box-shadow: var(--shadow-soft); transition: transform 0.3s; }
+.card:hover { transform: translateY(-4px); }
+
+/* NEWS */
+.news-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:25px; }
+.news-card {
+    background: var(--bg-card); border-radius:15px; padding:20px; box-shadow: var(--shadow-soft); transition: transform 0.3s;
 }
+.news-card:hover { transform: translateY(-5px); }
+.news-card h3 { font-size:1.4rem; margin-bottom:10px; color: var(--accent); }
+.news-card p { color: var(--text-muted); margin-bottom:15px; }
 
-/* ===== ANIMATION FOR HEADER TITLE ===== */
-.project-title {
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
+/* BUTTONS */
+.button {
+    display:inline-block; padding:10px 22px; border-radius:999px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text); font-weight:600; cursor:pointer;
+    opacity:0; transform:translateY(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.5s ease;
 }
+.button:hover { transform:translateY(0) scale(1.05); box-shadow:0 12px 30px var(--btn-shadow); background-color: var(--btn-bg-hover);}
+.button:active { transform: scale(0.98); box-shadow:0 6px 14px var(--btn-shadow); }
+.button:focus-visible { outline:2px solid rgba(255,255,255,0.6); outline-offset:2px; }
 
-body.loaded .project-title {
-    transform: scale(1);
-    opacity: 1;
+/* TEAM */
+.team-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:30px; }
+.team-card { background: var(--bg-card); border-radius:20px; padding:25px; text-align:center; box-shadow: var(--shadow-soft); transition: transform 0.3s; }
+.team-card:hover { transform:translateY(-5px); }
+.team-card img { width:110px; height:110px; border-radius:50%; object-fit:cover; }
+
+/* FOOTER */
+footer { background: var(--bg-header); color: var(--text-muted); text-align:center; padding:40px 20px; }
+footer a { color: var(--accent); }
+
+/* MEDIA */
+@media(max-width:768px){
+    header { padding:15px 20px; }
+    .header-inner { flex-direction:column; gap:15px; }
+    .main-nav { flex-wrap:wrap; }
+    .news-container, .team-container { grid-template-columns:1fr; }
 }
-
-/* ===== ANIMATION FOR BUTTONS ===== */
-.button,
-a.button,
-button {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-body.loaded .button {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
