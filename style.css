@@ -297,5 +297,87 @@ footer a {
 body.dark-theme .button:hover {
     box-shadow: 0 14px 35px rgba(147, 197, 253, 0.45);
 }
+    /* ================================
+   БАЗОВЫЕ ПЕРЕМЕННЫЕ КНОПОК
+================================ */
+:root {
+    --btn-bg: #2b6cb0;
+    --btn-bg-hover: #1e4f8a;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* ТЁМНАЯ ТЕМА */
+.dark-theme {
+    --btn-bg: #3b82f6;
+    --btn-bg-hover: #2563eb;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ================================
+   ОБЩИЙ СТИЛЬ КНОПОК
+================================ */
+button,
+.button,
+.btn,
+a.button,
+a.btn,
+.news-card a,
+.news a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    text-decoration: none;
+    font-weight: 500;
+
+    border: none;
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* ================================
+   НАВЕДЕНИЕ (HOVER)
+================================ */
+button:hover,
+.button:hover,
+.btn:hover,
+a.button:hover,
+a.btn:hover,
+.news-card a:hover,
+.news a:hover {
+    background-color: var(--btn-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--btn-shadow);
+}
+
+/* ================================
+   НАЖАТИЕ (ACTIVE)
+================================ */
+button:active,
+.button:active,
+.btn:active,
+a.button:active,
+a.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px var(--btn-shadow);
+}
+
+/* ================================
+   ФОКУС (доступность)
+================================ */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+}
+
 
 
