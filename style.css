@@ -1,4 +1,6 @@
-/* ===== CSS VARIABLES ===== */
+/* ==============================
+   CSS VARIABLES
+============================== */
 :root {
     --bg-main: #f6f7f9;
     --bg-card: #ffffff;
@@ -13,9 +15,17 @@
 
     --shadow-soft: 0 5px 15px rgba(0,0,0,0.08);
     --shadow-medium: 0 10px 25px rgba(0,0,0,0.12);
+
+    /* Buttons */
+    --btn-bg: linear-gradient(135deg, #2563eb, #1e40af);
+    --btn-bg-hover: linear-gradient(135deg, #1e40af, #1e3a8a);
+    --btn-text: #ffffff;
+    --btn-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
-/* ===== DARK THEME VARIABLES ===== */
+/* ==============================
+   DARK THEME
+============================== */
 body.dark-theme {
     --bg-main: #121212;
     --bg-card: #1f1f1f;
@@ -30,16 +40,24 @@ body.dark-theme {
 
     --shadow-soft: 0 10px 25px rgba(0,0,0,0.5);
     --shadow-medium: 0 15px 35px rgba(0,0,0,0.6);
+
+    --btn-bg: linear-gradient(135deg, #60a5fa, #3b82f6);
+    --btn-bg-hover: linear-gradient(135deg, #3b82f6, #2563eb);
+    --btn-shadow: 0 10px 30px rgba(147, 197, 253, 0.4);
 }
 
-/* ===== RESET ===== */
+/* ==============================
+   RESET
+============================== */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* ===== BASE ===== */
+/* ==============================
+   BASE
+============================== */
 body {
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     background: var(--bg-main);
@@ -51,24 +69,26 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ==============================
+   TYPOGRAPHY
+============================== */
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-heading);
     font-weight: 700;
     line-height: 1.25;
 }
 
-/* ===== HEADER ===== */
+/* ==============================
+   HEADER
+============================== */
 header {
-    width: 100%;
     background: var(--bg-header);
+    padding: 20px 40px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     box-shadow: var(--shadow-soft);
-    padding: 20px 40px;
 }
 
 .header-inner {
@@ -83,8 +103,8 @@ header {
 
 .header-right {
     display: flex;
-    align-items: center;
     gap: 15px;
+    align-items: center;
 }
 
 .header-right a:hover {
@@ -94,11 +114,13 @@ header {
 #theme-toggle {
     background: none;
     border: none;
-    font-size: 28px;
+    font-size: 26px;
     cursor: pointer;
 }
 
-/* ===== NAV ===== */
+/* ==============================
+   NAVIGATION
+============================== */
 .main-nav {
     display: flex;
     justify-content: center;
@@ -111,7 +133,7 @@ header {
     border-radius: 50px;
     background: var(--accent-light);
     font-weight: 500;
-    transition: all 0.3s;
+    transition: transform 0.2s, background 0.3s;
 }
 
 .main-nav a:hover {
@@ -119,7 +141,9 @@ header {
     transform: scale(1.05);
 }
 
-/* ===== MAIN ===== */
+/* ==============================
+   MAIN
+============================== */
 main {
     max-width: 1100px;
     margin: 60px auto;
@@ -139,12 +163,9 @@ section:hover {
     transform: translateY(-4px);
 }
 
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-/* ===== CARD ===== */
+/* ==============================
+   CARDS
+============================== */
 .card {
     background: var(--bg-card);
     padding: 20px;
@@ -157,7 +178,9 @@ section h2 {
     transform: translateY(-4px);
 }
 
-/* ===== NEWS ===== */
+/* ==============================
+   NEWS
+============================== */
 .news-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -177,9 +200,8 @@ section h2 {
 }
 
 .news-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
     color: var(--accent);
+    margin-bottom: 10px;
 }
 
 .news-card p {
@@ -187,16 +209,64 @@ section h2 {
     margin-bottom: 15px;
 }
 
-.button {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: #fff;
+/* ==============================
+   BUTTONS (ЕДИНАЯ СИСТЕМА)
+============================== */
+.button,
+a.button,
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 22px;
+    border-radius: 999px;
+
+    background: var(--btn-bg);
+    color: var(--btn-text);
+
     font-weight: 600;
+    font-size: 0.95rem;
+
+    border: none;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.25s ease,
+        background 0.3s ease,
+        filter 0.2s ease;
 }
 
-/* ===== TEAM ===== */
+.button:hover,
+a.button:hover,
+button:hover {
+    background: var(--btn-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--btn-shadow);
+    filter: brightness(1.05);
+}
+
+.button:active,
+a.button:active,
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    filter: brightness(0.95);
+}
+
+.button:focus-visible,
+a.button:focus-visible,
+button:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.35),
+        var(--btn-shadow);
+}
+
+/* ==============================
+   TEAM
+============================== */
 .team-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -223,7 +293,9 @@ section h2 {
     object-fit: cover;
 }
 
-/* ===== FOOTER ===== */
+/* ==============================
+   FOOTER
+============================== */
 footer {
     background: var(--bg-header);
     color: var(--text-muted);
@@ -235,7 +307,9 @@ footer a {
     color: var(--accent);
 }
 
-/* ===== MEDIA ===== */
+/* ==============================
+   MEDIA
+============================== */
 @media (max-width: 768px) {
     header {
         padding: 15px 20px;
@@ -254,130 +328,4 @@ footer a {
     .team-container {
         grid-template-columns: 1fr;
     }
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 22px;
-    border-radius: 999px;
-
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: #ffffff;
-
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.2px;
-
-    cursor: pointer;
-    user-select: none;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.3s ease,
-        filter 0.2s ease;
 }
-.button:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.45);
-    filter: brightness(1.08);
-}
-.button:active {
-    transform: translateY(0) scale(0.98);
-    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
-    filter: brightness(0.95);
-}
-.button:focus-visible {
-    outline: none;
-    box-shadow:
-        0 0 0 3px rgba(37, 99, 235, 0.35),
-        0 10px 25px rgba(37, 99, 235, 0.4);
-}
-body.dark-theme .button:hover {
-    box-shadow: 0 14px 35px rgba(147, 197, 253, 0.45);
-}
-    /* ================================
-   БАЗОВЫЕ ПЕРЕМЕННЫЕ КНОПОК
-================================ */
-:root {
-    --btn-bg: #2b6cb0;
-    --btn-bg-hover: #1e4f8a;
-    --btn-text: #ffffff;
-    --btn-shadow: rgba(0, 0, 0, 0.15);
-}
-
-/* ТЁМНАЯ ТЕМА */
-.dark-theme {
-    --btn-bg: #3b82f6;
-    --btn-bg-hover: #2563eb;
-    --btn-text: #ffffff;
-    --btn-shadow: rgba(0, 0, 0, 0.4);
-}
-
-/* ================================
-   ОБЩИЙ СТИЛЬ КНОПОК
-================================ */
-button,
-.button,
-.btn,
-a.button,
-a.btn,
-.news-card a,
-.news a {
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 8px;
-
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
-    text-decoration: none;
-    font-weight: 500;
-
-    border: none;
-    cursor: pointer;
-
-    transition:
-        background-color 0.25s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-/* ================================
-   НАВЕДЕНИЕ (HOVER)
-================================ */
-button:hover,
-.button:hover,
-.btn:hover,
-a.button:hover,
-a.btn:hover,
-.news-card a:hover,
-.news a:hover {
-    background-color: var(--btn-bg-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px var(--btn-shadow);
-}
-
-/* ================================
-   НАЖАТИЕ (ACTIVE)
-================================ */
-button:active,
-.button:active,
-.btn:active,
-a.button:active,
-a.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 8px var(--btn-shadow);
-}
-
-/* ================================
-   ФОКУС (доступность)
-================================ */
-button:focus-visible,
-a:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.6);
-    outline-offset: 2px;
-}
-
-
-
