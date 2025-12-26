@@ -1,3 +1,4 @@
+так?
 /* ===== CSS VARIABLES ===== */
 :root {
     --bg-main: #f6f7f9;
@@ -39,6 +40,7 @@ body.dark-theme {
     padding: 0;
 }
 
+/* ===== BASE ===== */
 body {
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     background: var(--bg-main);
@@ -47,45 +49,17 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* ===== INTRO ===== */
-#intro {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #121212;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 1s ease;
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
 }
 
-#intro h1 {
-    font-size: 4rem;
-    font-weight: 900;
-    color: #2563eb;
-    background: linear-gradient(90deg, #2563eb, #93c5fd, #2563eb);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientAnimation 3s ease infinite, textAppear 2s ease forwards;
-    text-align: center;
-    text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
-}
-
-@keyframes textAppear {
-    0% { opacity: 0; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.1); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-heading);
+    font-weight: 700;
+    line-height: 1.25;
 }
 
 /* ===== HEADER ===== */
@@ -96,8 +70,6 @@ header {
     border-bottom-right-radius: 30px;
     box-shadow: var(--shadow-soft);
     padding: 20px 40px;
-    z-index: 1;
-    position: relative;
 }
 
 .header-inner {
@@ -179,6 +151,11 @@ section h2 {
     padding: 20px;
     border-radius: 15px;
     box-shadow: var(--shadow-soft);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
 }
 
 /* ===== NEWS ===== */
@@ -218,19 +195,33 @@ section h2 {
     background: linear-gradient(135deg, #2563eb, #1e40af);
     color: #fff;
     font-weight: 600;
-    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
 }
 
-.button:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.45);
-    filter: brightness(1.08);
+/* ===== TEAM ===== */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
 }
 
-.button:active {
-    transform: translateY(0) scale(0.98);
-    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
-    filter: brightness(0.95);
+.team-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* ===== FOOTER ===== */
@@ -244,3 +235,190 @@ footer {
 footer a {
     color: var(--accent);
 }
+
+/* ===== MEDIA ===== */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+    }
+
+    .news-container,
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 22px;
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #ffffff;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.3s ease,
+        filter 0.2s ease;
+}
+.button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.45);
+    filter: brightness(1.08);
+}
+.button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+    filter: brightness(0.95);
+}
+.button:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.35),
+        0 10px 25px rgba(37, 99, 235, 0.4);
+}
+body.dark-theme .button:hover {
+    box-shadow: 0 14px 35px rgba(147, 197, 253, 0.45);
+}
+    /* ================================
+   БАЗОВЫЕ ПЕРЕМЕННЫЕ КНОПОК
+================================ */
+:root {
+    --btn-bg: #2b6cb0;
+    --btn-bg-hover: #1e4f8a;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* ТЁМНАЯ ТЕМА */
+.dark-theme {
+    --btn-bg: #3b82f6;
+    --btn-bg-hover: #2563eb;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ================================
+   ОБЩИЙ СТИЛЬ КНОПОК
+================================ */
+button,
+.button,
+.btn,
+a.button,
+a.btn,
+.news-card a,
+.news a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    text-decoration: none;
+    font-weight: 500;
+
+    border: none;
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* ================================
+   НАВЕДЕНИЕ (HOVER)
+================================ */
+button:hover,
+.button:hover,
+.btn:hover,
+a.button:hover,
+a.btn:hover,
+.news-card a:hover,
+.news a:hover {
+    background-color: var(--btn-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--btn-shadow);
+}
+
+/* ================================
+   НАЖАТИЕ (ACTIVE)
+================================ */
+button:active,
+.button:active,
+.btn:active,
+a.button:active,
+a.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px var(--btn-shadow);
+}
+
+/* ================================
+   ФОКУС (доступность)
+================================ */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+}
+    /* ===== INTRO ===== */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-main); /* Используем основной фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+#intro h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--accent);
+    background: linear-gradient(90deg, #2563eb, #93c5fd, #2563eb);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    animation: gradientAnimation 3s ease infinite, textAppear 2s ease forwards;
+}
+
+@keyframes textAppear {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
