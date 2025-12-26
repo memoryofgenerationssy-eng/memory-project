@@ -1,5 +1,3 @@
-const savedTheme = localStorage.getItem('theme') || 'dark';
-document.body.classList.add(savedTheme);
 /* ===== THEME TOGGLE ===== */
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
