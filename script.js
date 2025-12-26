@@ -1,6 +1,7 @@
-// ===== Тема (светлая/темная) =====
+// ===== Тема =====
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
+
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     body.classList.add(savedTheme);
@@ -8,6 +9,7 @@ if (savedTheme) {
 } else {
     themeToggle.textContent = '☀️';
 }
+
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-theme');
     if (body.classList.contains('dark-theme')) {
@@ -21,12 +23,13 @@ themeToggle.addEventListener('click', () => {
 
 // ===== Новости =====
 const news = [
-    { title: 'Интервью с семьями', text: 'Проект «Память поколений» ищет семью, с которой мы запишем новое интервью — о корнях, традициях, памяти и любви.', link: '#' },
-    { title: 'Презентация проекта', text: 'В стенах Казанской православной духовной семинарии состоялась презентация нашего проекта.', link: '#' },
-    { title: 'День рождения проекта', text: 'Набираем команду волонтёров для проведения мероприятий.', link: '#' }
+    { title: 'Интервью с семьями', text: 'Проект «Память поколений» ищет семью, с которой мы запишем новое интервью — о корнях, традициях, памяти и любви.', link: 'https://vk.com/wall-227763139_120' },
+    { title: 'Презентация проекта', text: 'В стенах Казанской православной духовной семинарии, в рамках XXIV Всероссийской научно-богословской конференции, состоялась презентация нашего проекта.', link: 'https://vk.com/wall-227763139_113' },
+    { title: 'День рождения проекта', text: 'Набираем команду волонтёров для проведения мероприятий.', link: 'https://vk.com/wall-227763139_106' }
 ];
 
 const newsContainer = document.getElementById('news-container');
+
 news.forEach(item => {
     const card = document.createElement('div');
     card.classList.add('news-card');
@@ -51,11 +54,13 @@ news.forEach(item => {
 // ===== Интро =====
 window.addEventListener('load', () => {
     const intro = document.getElementById('intro');
+    // Показываем интро 2.5 секунды, затем скрываем
     setTimeout(() => {
         intro.style.opacity = '0';
         intro.style.pointerEvents = 'none';
+        // Полностью удаляем из DOM через 1s (совпадает с transition)
         setTimeout(() => {
             intro.style.display = 'none';
         }, 1000);
-    }, 3000);
+    }, 2500);
 });
