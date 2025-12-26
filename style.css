@@ -328,4 +328,52 @@ footer a {
     .team-container {
         grid-template-columns: 1fr;
     }
+   /* ===== FADE-IN ВСЕГО КОНТЕНТА ===== */
+body {
+    opacity: 0;
+    transition: opacity 1s ease;
 }
+
+body.loaded {
+    opacity: 1;
+}
+
+/* ===== ANIMATION FOR SECTIONS ===== */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== ANIMATION FOR HEADER TITLE ===== */
+.project-title {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+body.loaded .project-title {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ===== ANIMATION FOR BUTTONS ===== */
+.button,
+a.button,
+button {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.loaded .button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
