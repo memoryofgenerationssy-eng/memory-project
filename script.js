@@ -88,5 +88,58 @@ window.addEventListener('load', () => {
                 }, 500);
             }, 40000);
         });
+    window.addEventListener('load', () => {
+    const storyBtn = document.getElementById("story-btn");
+    const storyForm = document.getElementById("story-form-container");
+
+    if (storyBtn && storyForm) {
+        // Добавляем плавную анимацию
+        storyForm.style.transition = "max-height 0.5s ease, opacity 0.5s ease";
+        storyForm.style.overflow = "hidden";
+        storyForm.style.maxHeight = "0";
+        storyForm.style.opacity = "0";
+
+        // Создаём элемент для таймера
+        const timerDisplay = document.createElement('p');
+        timerDisplay.style.marginTop = '10px';
+        timerDisplay.style.fontWeight = 'bold';
+        storyForm.appendChild(timerDisplay);
+
+        storyBtn.addEventListener("click", () => {
+            storyForm.style.display = "block";
+
+            setTimeout(() => {
+                storyForm.style.maxHeight = "1000px";
+                storyForm.style.opacity = "1";
+            }, 50);
+
+            storyBtn.style.display = "none";
+            storyForm.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            // Таймер обратного отсчёта
+            let countdown = 40; // секунд
+            timerDisplay.textContent = `Форма закроется через ${countdown} секунд`;
+
+            const interval = setInterval(() => {
+                countdown--;
+                timerDisplay.textContent = `Форма закроется через ${countdown} секунд`;
+
+                if (countdown <= 0) {
+                    clearInterval(interval);
+
+                    // Плавное закрытие формы
+                    storyForm.style.maxHeight = "0";
+                    storyForm.style.opacity = "0";
+
+                    setTimeout(() => {
+                        storyForm.style.display = "none";
+                        storyBtn.style.display = "block";
+                        timerDisplay.textContent = ''; // очищаем таймер
+                    }, 500);
+                }
+            }, 1000);
+        });
     }
+});
+
 });
