@@ -348,3 +348,36 @@ footer a {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+/* Отступы между секциями на главной */
+.page-center {
+    margin-bottom: 50px; /* отступ снизу каждой секции */
+}
+
+/* Если внутри секции есть карточка */
+.page-center .card {
+    margin-top: 20px; /* отступ сверху карточки */
+    padding: 20px;    /* внутренний отступ карточки */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: var(--bg-card);
+}
+
+/* Отступ для заголовков */
+.page-center h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+/* Отступ для кнопок внутри карточки */
+.page-center .form-button {
+    margin-top: 20px;
+}
+
+/* Новости */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* расстояние между карточками новостей */
+}
+
+
