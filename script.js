@@ -2,7 +2,6 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Устанавливаем сохранённую тему
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     body.classList.add(savedTheme);
@@ -24,82 +23,47 @@ themeToggle.addEventListener('click', () => {
 
 /* ===== NEWS ===== */
 const news = [
-    { title: 'Интервью с семьями', text: 'Проект «Память поколений» ищет семью, с которой мы запишем новое интервью — о корнях, традициях, памяти и любви.', link: 'https://vk.com/wall-227763139_120' },
-    { title: 'Презентация проекта', text: 'В стенах Казанской православной духовной семинарии, в рамках XXIV Всероссийской научно-богословской конференции, состоялась презентация нашего проекта.', link: 'https://vk.com/wall-227763139_113' },
-    { title: 'День рождения проекта', text: 'Набираем команду волонтёров для проведения мероприятий.', link: 'https://vk.com/wall-227763139_106' }
+    { title: 'Интервью с семьями', text: 'Проект «Память поколений» ищет семью...', link: 'https://vk.com/wall-227763139_120' },
+    { title: 'Презентация проекта', text: 'В стенах Казанской православной...', link: 'https://vk.com/wall-227763139_113' },
+    { title: 'День рождения проекта', text: 'Набираем команду волонтёров...', link: 'https://vk.com/wall-227763139_106' }
 ];
 
 const newsContainer = document.getElementById('news-container');
-
 news.forEach(item => {
     const card = document.createElement('div');
     card.classList.add('news-card');
-
     card.innerHTML = `
         <h3>${item.title}</h3>
         <p>${item.text}</p>
         <a href="${item.link}" target="_blank" class="button">Подробнее</a>
     `;
-
     newsContainer.appendChild(card);
 });
 
-/* ===== INTRO ANIMATION ===== */
+/* ===== INTRO + STORY FORM ===== */
 window.addEventListener('load', () => {
     const intro = document.getElementById('intro');
-    if (!intro) return;
-
-    intro.style.transition = 'opacity 1s ease';
-    setTimeout(() => {
-        intro.style.opacity = '0';
+    if (intro) {
+        intro.style.transition = 'opacity 1s ease';
         setTimeout(() => {
-            intro.style.display = 'none';
-        }, 1000);
-    }, 2500);
+            intro.style.opacity = '0';
+            setTimeout(() => {
+                intro.style.display = 'none';
+            }, 1000);
+        }, 2500);
+    }
 
-    /* ===== STORY FORM ===== */
     const storyBtn = document.getElementById("story-btn");
     const storyForm = document.getElementById("story-form-container");
 
     if (storyBtn && storyForm) {
+        // Анимация формы
         storyForm.style.transition = "max-height 0.5s ease, opacity 0.5s ease";
         storyForm.style.overflow = "hidden";
         storyForm.style.maxHeight = "0";
         storyForm.style.opacity = "0";
 
-        storyBtn.addEventListener("click", () => {
-            storyForm.style.display = "block";
-
-            setTimeout(() => {
-                storyForm.style.maxHeight = "1000px";
-                storyForm.style.opacity = "1";
-            }, 50);
-
-            storyBtn.style.display = "none";
-            storyForm.scrollIntoView({ behavior: "smooth", block: "start" });
-
-            // Автоскрытие через 40 секунд
-            setTimeout(() => {
-                storyForm.style.maxHeight = "0";
-                storyForm.style.opacity = "0";
-                setTimeout(() => {
-                    storyForm.style.display = "none";
-                    storyBtn.style.display = "block";
-                }, 500);
-            }, 40000);
-        });
-    window.addEventListener('load', () => {
-    const storyBtn = document.getElementById("story-btn");
-    const storyForm = document.getElementById("story-form-container");
-
-    if (storyBtn && storyForm) {
-        // Добавляем плавную анимацию
-        storyForm.style.transition = "max-height 0.5s ease, opacity 0.5s ease";
-        storyForm.style.overflow = "hidden";
-        storyForm.style.maxHeight = "0";
-        storyForm.style.opacity = "0";
-
-        // Создаём элемент для таймера
+        // Таймер обратного отсчёта
         const timerDisplay = document.createElement('p');
         timerDisplay.style.marginTop = '10px';
         timerDisplay.style.fontWeight = 'bold';
@@ -107,7 +71,6 @@ window.addEventListener('load', () => {
 
         storyBtn.addEventListener("click", () => {
             storyForm.style.display = "block";
-
             setTimeout(() => {
                 storyForm.style.maxHeight = "1000px";
                 storyForm.style.opacity = "1";
@@ -116,30 +79,23 @@ window.addEventListener('load', () => {
             storyBtn.style.display = "none";
             storyForm.scrollIntoView({ behavior: "smooth", block: "start" });
 
-            // Таймер обратного отсчёта
-            let countdown = 40; // секунд
+            // Обратный отсчёт
+            let countdown = 40;
             timerDisplay.textContent = `Форма закроется через ${countdown} секунд`;
-
             const interval = setInterval(() => {
                 countdown--;
                 timerDisplay.textContent = `Форма закроется через ${countdown} секунд`;
-
                 if (countdown <= 0) {
                     clearInterval(interval);
-
-                    // Плавное закрытие формы
                     storyForm.style.maxHeight = "0";
                     storyForm.style.opacity = "0";
-
                     setTimeout(() => {
                         storyForm.style.display = "none";
                         storyBtn.style.display = "block";
-                        timerDisplay.textContent = ''; // очищаем таймер
+                        timerDisplay.textContent = '';
                     }, 500);
                 }
             }, 1000);
         });
     }
-});
-
 });
