@@ -74,5 +74,50 @@ if (storyBtn && storyForm) {
         storyForm.style.display = "block";
         storyBtn.style.display = "none";
     });
-}
+document.addEventListener("DOMContentLoaded", () => {
+
+    const storyBtn = document.getElementById("story-btn");
+    const storyForm = document.getElementById("story-form-container");
+
+    if (storyBtn && storyForm) {
+
+        // Добавляем плавную анимацию через CSS
+        storyForm.style.transition = "max-height 0.5s ease, opacity 0.5s ease";
+        storyForm.style.overflow = "hidden";
+        storyForm.style.maxHeight = "0";
+        storyForm.style.opacity = "0";
+
+        storyBtn.addEventListener("click", () => {
+            // Показываем форму
+            storyForm.style.display = "block";
+
+            // Плавное открытие
+            setTimeout(() => {
+                storyForm.style.maxHeight = "1000px"; // больше, чем высота формы
+                storyForm.style.opacity = "1";
+            }, 50); // небольшая задержка для триггера transition
+
+            storyBtn.style.display = "none";
+
+            // Скроллим к форме
+            storyForm.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            // Автоскрытие через 40 секунд
+            setTimeout(() => {
+                // Плавное закрытие
+                storyForm.style.maxHeight = "0";
+                storyForm.style.opacity = "0";
+
+                // Через 0.5s полностью скрываем и возвращаем кнопку
+                setTimeout(() => {
+                    storyForm.style.display = "none";
+                    storyBtn.style.display = "block";
+                }, 500);
+
+            }, 40000); // 40 000 мс = 40 секунд
+        });
+    }
+
+});
+
 
