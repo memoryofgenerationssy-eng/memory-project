@@ -35,6 +35,60 @@ body.dark-theme {
 
     --shadow-soft: 0 10px 25px rgba(0,0,0,0.5);
     --shadow-medium: 0 15px 35px rgba(0,0,0,0.6);
+    /* ===== ОБЩИЕ ОТСТУПЫ МЕЖДУ СЕКЦИЯМИ ===== */
+.page-center {
+    margin: 50px auto;       /* отступ сверху и снизу каждой секции */
+    max-width: 900px;        /* ограничение ширины для удобного чтения */
+    padding: 0 20px;         /* внутренние отступы слева и справа */
+}
+
+/* Заголовки секций */
+.page-center h2 {
+    margin-bottom: 20px;     /* отступ снизу заголовка */
+    font-size: 1.8rem;
+}
+
+/* Карточки внутри секций */
+.page-center .card {
+    margin-top: 10px;        /* отступ сверху карточки от текста или заголовка */
+    padding: 20px;           /* внутренние отступы карточки */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: var(--bg-card);
+}
+
+/* Кнопки внутри карточек */
+.page-center .form-button {
+    margin-top: 20px;        /* отступ сверху от текста */
+}
+
+/* Новости */
+#news-container {
+    margin-top: 30px;        /* отступ от заголовка "Новости" до первой карточки */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;               /* расстояние между карточками новостей */
+}
+
+/* Таймер и форма истории */
+#story-form-container p {
+    margin-top: 15px;        /* отступ таймера от формы */
+    font-weight: bold;
+}
+
+/* Для мобильных */
+@media (max-width: 600px) {
+    .page-center {
+        margin: 30px 15px;
+    }
+    .page-center .card {
+        padding: 15px;
+    }
+    #news-container {
+        gap: 20px;
+    }
+}
+
 
     --btn-bg: #3b82f6;
     --btn-bg-hover: #2563eb;
@@ -379,5 +433,6 @@ footer a {
     flex-direction: column;
     gap: 30px; /* расстояние между карточками новостей */
 }
+
 
 
