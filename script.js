@@ -35,19 +35,11 @@ news.forEach(item => {
     const card = document.createElement('div');
     card.classList.add('news-card');
 
-    const h3 = document.createElement('h3');
-    h3.textContent = item.title;
-    card.appendChild(h3);
-
-    const p = document.createElement('p');
-    p.textContent = item.text;
-    card.appendChild(p);
-
-    const btn = document.createElement('a');
-    btn.textContent = 'Подробнее';
-    btn.href = item.link;
-    btn.classList.add('button');
-    card.appendChild(btn);
+    card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+        <a href="${item.link}" target="_blank" class="button">Подробнее</a>
+    `;
 
     newsContainer.appendChild(card);
 });
@@ -55,69 +47,46 @@ news.forEach(item => {
 /* ===== INTRO ANIMATION ===== */
 window.addEventListener('load', () => {
     const intro = document.getElementById('intro');
+    if (!intro) return;
 
-    // Задержка перед скрытием интро (например, 2.5 секунды)
+    intro.style.transition = 'opacity 1s ease';
     setTimeout(() => {
         intro.style.opacity = '0';
-
-        // После анимации скрываем полностью
         setTimeout(() => {
             intro.style.display = 'none';
-        }, 1000); // Должно совпадать с CSS transition opacity
+        }, 1000);
     }, 2500);
-});
-const storyBtn = document.getElementById("story-btn");
-const storyForm = document.getElementById("story-form-container");
 
-if (storyBtn && storyForm) {
-    storyBtn.addEventListener("click", () => {
-        storyForm.style.display = "block";
-        storyBtn.style.display = "none";
-    });
-document.addEventListener("DOMContentLoaded", () => {
-
+    /* ===== STORY FORM ===== */
     const storyBtn = document.getElementById("story-btn");
     const storyForm = document.getElementById("story-form-container");
 
     if (storyBtn && storyForm) {
-
-        // Добавляем плавную анимацию через CSS
         storyForm.style.transition = "max-height 0.5s ease, opacity 0.5s ease";
         storyForm.style.overflow = "hidden";
         storyForm.style.maxHeight = "0";
         storyForm.style.opacity = "0";
 
         storyBtn.addEventListener("click", () => {
-            // Показываем форму
             storyForm.style.display = "block";
 
-            // Плавное открытие
             setTimeout(() => {
-                storyForm.style.maxHeight = "1000px"; // больше, чем высота формы
+                storyForm.style.maxHeight = "1000px";
                 storyForm.style.opacity = "1";
-            }, 50); // небольшая задержка для триггера transition
+            }, 50);
 
             storyBtn.style.display = "none";
-
-            // Скроллим к форме
             storyForm.scrollIntoView({ behavior: "smooth", block: "start" });
 
             // Автоскрытие через 40 секунд
             setTimeout(() => {
-                // Плавное закрытие
                 storyForm.style.maxHeight = "0";
                 storyForm.style.opacity = "0";
-
-                // Через 0.5s полностью скрываем и возвращаем кнопку
                 setTimeout(() => {
                     storyForm.style.display = "none";
                     storyBtn.style.display = "block";
                 }, 500);
-
-            }, 40000); // 40 000 мс = 40 секунд
+            }, 40000);
         });
     }
-
 });
-
-
