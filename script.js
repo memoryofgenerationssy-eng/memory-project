@@ -66,3 +66,13 @@ window.addEventListener('load', () => {
         }, 1000); // Должно совпадать с CSS transition opacity
     }, 2500);
 });
+const storyBtn = document.getElementById("story-btn");
+const storyForm = document.getElementById("story-form-container");
+
+if (storyBtn && storyForm) {
+    storyBtn.addEventListener("click", () => {
+        storyForm.style.display = "block";
+        storyBtn.style.display = "none";
+    });
+}
+
