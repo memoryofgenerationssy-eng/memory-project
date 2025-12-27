@@ -30,29 +30,35 @@ const news = [
 ];
 
 const newsContainer = document.getElementById('news-container');
-if (newsContainer) {
-    news.forEach(item => {
-        const card = document.createElement('div');
-        card.classList.add('news-card');
 
-        card.innerHTML = `
-            <h3>${item.title}</h3>
-            <p>${item.text}</p>
-            <a href="${item.link}" target="_blank" class="button">Подробнее</a>
-        `;
+news.forEach(item => {
+    const card = document.createElement('div');
+    card.classList.add('news-card');
 
-        newsContainer.appendChild(card);
-    });
-}
+    card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+        <a href="${item.link}" target="_blank" class="button">Подробнее</a>
+    `;
+
+    newsContainer.appendChild(card);
+});
 
 /* ===== INTRO ANIMATION ===== */
 window.addEventListener('load', () => {
     const intro = document.getElementById('intro');
     if (!intro) return;
 
-    if (!sessionStorage.getItem('introShown')) {
-        // Показ интро только один раз за сессию
+    // Если интро уже показывалось в этой сессии, скрываем сразу
+    if (sessionStorage.getItem('introShown')) {
+        intro.style.display = 'none';
+        intro.style.opacity = '0';
+    } else {
+        // Показываем интро
+        intro.style.display = 'block';
+        intro.style.opacity = '1';
         intro.style.transition = 'opacity 1s ease';
+
         setTimeout(() => {
             intro.style.opacity = '0';
             setTimeout(() => {
@@ -61,28 +67,31 @@ window.addEventListener('load', () => {
         }, 2500);
 
         sessionStorage.setItem('introShown', 'true');
-    } else {
-        // Если интро уже было, скрываем сразу
-        intro.style.display = 'none';
     }
 
-    /* ===== STORY FORM LOGIC ===== */
+    /* ===== STORY FORM ===== */
     const storyBtn = document.getElementById("story-btn");
     const storyForm = document.getElementById("story-form-container");
 
     if (storyBtn && storyForm) {
+        // Плавная анимация формы
         storyForm.style.transition = "max-height 0.5s ease, opacity 0.5s ease";
         storyForm.style.overflow = "hidden";
         storyForm.style.maxHeight = "0";
         storyForm.style.opacity = "0";
 
         // Элемент для таймера
-        const timerDisplay = document.createElement('p');
-        timerDisplay.style.marginTop = '10px';
-        timerDisplay.style.fontWeight = 'bold';
-        storyForm.appendChild(timerDisplay);
+        let timerDisplay = storyForm.querySelector('.timer-display');
+        if (!timerDisplay) {
+            timerDisplay = document.createElement('p');
+            timerDisplay.classList.add('timer-display');
+            timerDisplay.style.marginTop = '10px';
+            timerDisplay.style.fontWeight = 'bold';
+            storyForm.appendChild(timerDisplay);
+        }
 
         storyBtn.addEventListener("click", () => {
+            // Показ формы
             storyForm.style.display = "block";
             setTimeout(() => {
                 storyForm.style.maxHeight = "1000px";
@@ -93,7 +102,7 @@ window.addEventListener('load', () => {
             storyForm.scrollIntoView({ behavior: "smooth", block: "start" });
 
             // Таймер обратного отсчёта
-            let countdown = 60;
+            let countdown = 40; // секунд
             timerDisplay.textContent = `Форма закроется через ${countdown} секунд`;
 
             const interval = setInterval(() => {
