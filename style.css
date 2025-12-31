@@ -285,32 +285,6 @@ body.dark-theme .button:hover {
     box-shadow: 0 14px 35px rgba(147, 197, 253, 0.45);
 }
 
-/* ===== TEAM ===== */
-.team-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-}
-
-.team-card {
-    background: var(--bg-card);
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.2s;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-}
-
-.team-card img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-}
 
 /* ===== FOOTER ===== */
 footer {
@@ -433,6 +407,7 @@ footer a {
     flex-direction: column;
     gap: 30px; /* расстояние между карточками новостей */
 }
+
 
 
 
